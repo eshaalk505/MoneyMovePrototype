@@ -76,7 +76,7 @@ namespace MoneyMovePrototype
                                             int ID = informationManagementMethods.getIDFromUserName(username);
                                             string forename = informationManagementMethods.getForenameFromID(ID);
                                             string surname = informationManagementMethods.getSurnameFromID(ID);
-                                            SessionManager.Instance.CreateSession(username, forename, surname);
+                                            SessionManager.Instance.CreateSession(ID, username, forename, surname);
                                             FormManagement.NavigateToNextForm(this, new SystemUserDashboard());
                                         }
                                     }

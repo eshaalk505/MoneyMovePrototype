@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutMoneyMove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutMoneyMove.Designer.cs">
+      <DependentUpon>AboutMoneyMove.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagementClasses\FormManagement.cs" />
     <Compile Include="ManagementClasses\InformationManagementMethods.cs" />
     <Compile Include="Objects\SessionManager.cs" />
@@ -91,6 +97,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutMoneyMove.resx">
+      <DependentUpon>AboutMoneyMove.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

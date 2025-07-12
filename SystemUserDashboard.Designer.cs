@@ -129,7 +129,7 @@
             this.dgvCurrentAccounts.Location = new System.Drawing.Point(40, 180);
             this.dgvCurrentAccounts.Name = "dgvCurrentAccounts";
             this.dgvCurrentAccounts.RowHeadersWidth = 102;
-            this.dgvCurrentAccounts.Size = new System.Drawing.Size(718, 467);
+            this.dgvCurrentAccounts.Size = new System.Drawing.Size(565, 467);
             this.dgvCurrentAccounts.TabIndex = 18;
             // 
             // cmsForDGV
@@ -163,6 +163,7 @@
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
             this.logoutToolStripMenuItem.Text = "About MoneyMove";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem1
             // 

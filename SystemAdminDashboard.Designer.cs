@@ -90,6 +90,7 @@
             this.aboutMoneyMoveToolStripMenuItem.Name = "aboutMoneyMoveToolStripMenuItem";
             this.aboutMoneyMoveToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
             this.aboutMoneyMoveToolStripMenuItem.Text = "About MoneyMove";
+            this.aboutMoneyMoveToolStripMenuItem.Click += new System.EventHandler(this.aboutMoneyMoveToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 

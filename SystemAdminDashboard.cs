@@ -26,5 +26,10 @@ namespace MoneyMovePrototype
                 SessionManager.Instance.FinishSession();
             }
         }
+
+        private void aboutMoneyMoveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormManagement.NavigateToNextForm(this, new AboutMoneyMove());
+        }
     }
 }

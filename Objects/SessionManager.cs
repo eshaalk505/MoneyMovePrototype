@@ -15,6 +15,7 @@ namespace MoneyMovePrototype
 
         //lock needed for instance of SessionManager created
         private static readonly object padlock = new object();
+        public int _idOfUser { get; private set; }
         public string _usernameOfUser { get; private set; }
         public string _forenameOfUser { get; private set; }
         public string _surnameOfUser { get; private set; }
@@ -40,8 +41,9 @@ namespace MoneyMovePrototype
         }
 
         //upon successful login, a new session is created and values needed for creating a session are added
-        public void CreateSession(string userUsername, string userForename, string userSurname)
+        public void CreateSession(int userID, string userUsername, string userForename, string userSurname)
         {
+            this._idOfUser = userID;
             this._usernameOfUser = userUsername;
             this._forenameOfUser = userForename;
             this._surnameOfUser = userSurname;
@@ -50,6 +52,7 @@ namespace MoneyMovePrototype
         //once user is done with their session, it is ended + program is closed
         public void FinishSession()
         {
+            _idOfUser = 0;
             _usernameOfUser = null;
             _forenameOfUser = null;
             _surnameOfUser = null;
