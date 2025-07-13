@@ -81,6 +81,7 @@
             this.btnLogin.TabIndex = 15;
             this.btnLogin.Text = "View Currency Exchange Rates";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // pictureBox1
             // 
@@ -129,7 +130,7 @@
             this.dgvCurrentAccounts.Location = new System.Drawing.Point(40, 180);
             this.dgvCurrentAccounts.Name = "dgvCurrentAccounts";
             this.dgvCurrentAccounts.RowHeadersWidth = 102;
-            this.dgvCurrentAccounts.Size = new System.Drawing.Size(565, 467);
+            this.dgvCurrentAccounts.Size = new System.Drawing.Size(531, 467);
             this.dgvCurrentAccounts.TabIndex = 18;
             // 
             // cmsForDGV

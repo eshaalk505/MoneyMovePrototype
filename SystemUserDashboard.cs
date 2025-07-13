@@ -17,6 +17,10 @@ namespace MoneyMovePrototype
     {
         private void LoadDGVData()
         {
+            dgvCurrentAccounts.DefaultCellStyle.Font = new Font("Candara", 10);
+            dgvCurrentAccounts.DefaultCellStyle.ForeColor = Color.MidnightBlue;
+            dgvCurrentAccounts.ColumnHeadersDefaultCellStyle.Font = new Font("Candara", 11, FontStyle.Bold);
+            dgvCurrentAccounts.ColumnHeadersDefaultCellStyle.ForeColor = Color.MidnightBlue;
             string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\eshaa\\Documents\\Year 2\\Software Engineering Concepts + Methods\\MoneyMovePrototype\\MoneyMoveDB.mdf\";Integrated Security=True";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -53,6 +57,11 @@ namespace MoneyMovePrototype
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormManagement.NavigateToNextForm(this, new AboutMoneyMove());
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            FormManagement.NavigateToNextForm(this, new ViewCurrencyExchangeRates());
         }
     }
 }
