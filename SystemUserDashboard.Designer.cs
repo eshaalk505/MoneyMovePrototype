@@ -131,6 +131,7 @@
             this.dgvCurrentAccounts.Location = new System.Drawing.Point(40, 180);
             this.dgvCurrentAccounts.Name = "dgvCurrentAccounts";
             this.dgvCurrentAccounts.RowHeadersWidth = 102;
+            this.dgvCurrentAccounts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCurrentAccounts.Size = new System.Drawing.Size(531, 467);
             this.dgvCurrentAccounts.TabIndex = 18;
             // 
@@ -148,6 +149,7 @@
             this.viewAccountDetailsToolStripMenuItem.Name = "viewAccountDetailsToolStripMenuItem";
             this.viewAccountDetailsToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.viewAccountDetailsToolStripMenuItem.Text = "View Account Details";
+            this.viewAccountDetailsToolStripMenuItem.Click += new System.EventHandler(this.viewAccountDetailsToolStripMenuItem_Click);
             // 
             // msDashboard
             // 

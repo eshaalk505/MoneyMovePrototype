@@ -27,7 +27,7 @@ namespace MoneyMovePrototype
 
         private void cmbAccountProvider_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbAccountProvider.SelectedItem=="Other")
+            if (Convert.ToString(cmbAccountProvider.SelectedItem)=="Other")
             {
                 lblOtherAccount.Show();
                 txtAccountProvider.Show();

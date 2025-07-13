@@ -68,5 +68,11 @@ namespace MoneyMovePrototype
         {
             FormManagement.NavigateToNextForm(this, new SetDesignatedAccount());
         }
+
+        private void viewAccountDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CurrencyAccount accountToView = new CurrencyAccount(Convert.ToString(dgvCurrentAccounts.SelectedCells[0].Value), Convert.ToString(dgvCurrentAccounts.SelectedCells[1].Value), Convert.ToString(dgvCurrentAccounts.SelectedCells[2].Value), Convert.ToDecimal(dgvCurrentAccounts.SelectedCells[3].Value));
+            FormManagement.NavigateToNextForm(this, new ViewSelectedAccount(accountToView));
+        }
     }
 }

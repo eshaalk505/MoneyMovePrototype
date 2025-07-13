@@ -67,6 +67,7 @@
     <Compile Include="AboutMoneyMove.Designer.cs">
       <DependentUpon>AboutMoneyMove.cs</DependentUpon>
     </Compile>
+    <Compile Include="CurrencyAccount.cs" />
     <Compile Include="SetDesignatedAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +110,12 @@
     <Compile Include="ViewCurrencyExchangeRates.Designer.cs">
       <DependentUpon>ViewCurrencyExchangeRates.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewSelectedAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewSelectedAccount.Designer.cs">
+      <DependentUpon>ViewSelectedAccount.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AboutMoneyMove.resx">
       <DependentUpon>AboutMoneyMove.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ViewCurrencyExchangeRates.resx">
       <DependentUpon>ViewCurrencyExchangeRates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewSelectedAccount.resx">
+      <DependentUpon>ViewSelectedAccount.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
