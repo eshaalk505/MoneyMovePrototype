@@ -41,6 +41,7 @@
             this.msDashboard = new System.Windows.Forms.MenuStrip();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnDesignatedAccount = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCurrentAccounts)).BeginInit();
             this.cmsForDGV.SuspendLayout();
@@ -52,7 +53,7 @@
             this.lblWelcomeDashboard.AutoSize = true;
             this.lblWelcomeDashboard.Font = new System.Drawing.Font("Candara", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcomeDashboard.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblWelcomeDashboard.Location = new System.Drawing.Point(21, 26);
+            this.lblWelcomeDashboard.Location = new System.Drawing.Point(21, 36);
             this.lblWelcomeDashboard.Name = "lblWelcomeDashboard";
             this.lblWelcomeDashboard.Size = new System.Drawing.Size(485, 59);
             this.lblWelcomeDashboard.TabIndex = 0;
@@ -74,7 +75,7 @@
             this.btnLogin.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnLogin.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLogin.Location = new System.Drawing.Point(1102, 214);
+            this.btnLogin.Location = new System.Drawing.Point(1102, 130);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(1);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(309, 89);
@@ -86,9 +87,9 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.SteelBlue;
-            this.pictureBox1.Location = new System.Drawing.Point(1042, 171);
+            this.pictureBox1.Location = new System.Drawing.Point(1042, 83);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(421, 476);
+            this.pictureBox1.Size = new System.Drawing.Size(421, 564);
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
             // 
@@ -97,7 +98,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(1102, 363);
+            this.button1.Location = new System.Drawing.Point(1102, 381);
             this.button1.Margin = new System.Windows.Forms.Padding(1);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(309, 89);
@@ -173,12 +174,27 @@
             this.logoutToolStripMenuItem1.Text = "Logout";
             this.logoutToolStripMenuItem1.Click += new System.EventHandler(this.logoutToolStripMenuItem1_Click);
             // 
+            // btnDesignatedAccount
+            // 
+            this.btnDesignatedAccount.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnDesignatedAccount.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDesignatedAccount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDesignatedAccount.Location = new System.Drawing.Point(1102, 261);
+            this.btnDesignatedAccount.Margin = new System.Windows.Forms.Padding(1);
+            this.btnDesignatedAccount.Name = "btnDesignatedAccount";
+            this.btnDesignatedAccount.Size = new System.Drawing.Size(309, 89);
+            this.btnDesignatedAccount.TabIndex = 20;
+            this.btnDesignatedAccount.Text = "Manage Designated UK Bank Account";
+            this.btnDesignatedAccount.UseVisualStyleBackColor = false;
+            this.btnDesignatedAccount.Click += new System.EventHandler(this.btnDesignatedAccount_Click);
+            // 
             // SystemUserDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1484, 661);
+            this.Controls.Add(this.btnDesignatedAccount);
             this.Controls.Add(this.msDashboard);
             this.Controls.Add(this.dgvCurrentAccounts);
             this.Controls.Add(this.button2);
@@ -215,5 +231,6 @@
         private System.Windows.Forms.MenuStrip msDashboard;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem1;
+        private System.Windows.Forms.Button btnDesignatedAccount;
     }
 }

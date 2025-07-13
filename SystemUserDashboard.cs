@@ -47,8 +47,8 @@ namespace MoneyMovePrototype
 
         private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Are you sure you want to log out? Any unsaved changes will be lost and the site will close down.", "Confirm Action", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
-            if (DialogResult == DialogResult.Yes)
+            DialogResult result= MessageBox.Show("Are you sure you want to log out? Any unsaved changes will be lost and the site will close down.", "Confirm Action", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
             {
                 SessionManager.Instance.FinishSession();
             }
@@ -62,6 +62,11 @@ namespace MoneyMovePrototype
         private void btnLogin_Click(object sender, EventArgs e)
         {
             FormManagement.NavigateToNextForm(this, new ViewCurrencyExchangeRates());
+        }
+
+        private void btnDesignatedAccount_Click(object sender, EventArgs e)
+        {
+            FormManagement.NavigateToNextForm(this, new SetDesignatedAccount());
         }
     }
 }

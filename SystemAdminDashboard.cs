@@ -20,8 +20,8 @@ namespace MoneyMovePrototype
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Are you sure you want to log out? Any unsaved changes will be lost and the site will close down.", "Confirm Action", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
-            if (DialogResult==DialogResult.Yes)
+            DialogResult result= MessageBox.Show("Are you sure you want to log out? Any unsaved changes will be lost and the site will close down.", "Confirm Action", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if (result==DialogResult.Yes)
             {
                 SessionManager.Instance.FinishSession();
             }
