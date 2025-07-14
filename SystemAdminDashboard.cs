@@ -31,5 +31,13 @@ namespace MoneyMovePrototype
         {
             FormManagement.NavigateToNextForm(this, new AboutMoneyMove());
         }
+
+        private void viewCaseDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CurrencyAccount accountToView = new CurrencyAccount(Convert.ToString(dgvSusCases.SelectedCells[0].Value), Convert.ToString(dgvSusCases.SelectedCells[1].Value), Convert.ToString(dgvSusCases.SelectedCells[2].Value), Convert.ToDecimal(dgvSusCases.SelectedCells[3].Value));
+
+            SuspiciousCase selectedCase = new SuspiciousCase(Convert.ToInt32(dgvSusCases.SelectedCells[0].Value), Convert.ToInt32(dgvSusCases.SelectedCells[1].Value), Convert.ToString(dgvSusCases.SelectedCells[2].Value), Convert.ToString(dgvSusCases.SelectedCells[3].Value), Convert.ToBoolean(dgvSusCases.SelectedCells[4].Value), Convert.ToString(dgvSusCases.SelectedCells[5].Value), Convert.ToString(dgvSusCases.SelectedCells[6].Value), Convert.ToString(dgvSusCases.SelectedCells[7].Value));
+            FormManagement.NavigateToNextForm(this,new ManageSuspiciousCaseDetails(selectedCase));
+        }
     }
 }

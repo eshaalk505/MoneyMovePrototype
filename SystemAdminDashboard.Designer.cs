@@ -28,14 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblWelcomeDashboard = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvCurrentAccounts = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutMoneyMoveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCurrentAccounts)).BeginInit();
+            this.cmsSusCases = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.viewCaseDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvSusCases = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
+            this.cmsSusCases.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSusCases)).BeginInit();
             this.SuspendLayout();
             // 
             // lblWelcomeDashboard
@@ -60,22 +64,9 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Manage suspicious transaction cases:";
             // 
-            // dgvCurrentAccounts
-            // 
-            this.dgvCurrentAccounts.AllowUserToAddRows = false;
-            this.dgvCurrentAccounts.AllowUserToDeleteRows = false;
-            this.dgvCurrentAccounts.AllowUserToOrderColumns = true;
-            this.dgvCurrentAccounts.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            this.dgvCurrentAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCurrentAccounts.GridColor = System.Drawing.Color.MidnightBlue;
-            this.dgvCurrentAccounts.Location = new System.Drawing.Point(47, 180);
-            this.dgvCurrentAccounts.Name = "dgvCurrentAccounts";
-            this.dgvCurrentAccounts.RowHeadersWidth = 102;
-            this.dgvCurrentAccounts.Size = new System.Drawing.Size(718, 467);
-            this.dgvCurrentAccounts.TabIndex = 19;
-            // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutMoneyMoveToolStripMenuItem,
             this.logoutToolStripMenuItem});
@@ -98,13 +89,44 @@
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.logoutToolStripMenuItem.Text = "Logout";
             // 
+            // cmsSusCases
+            // 
+            this.cmsSusCases.ImageScalingSize = new System.Drawing.Size(40, 40);
+            this.cmsSusCases.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.viewCaseDetailsToolStripMenuItem});
+            this.cmsSusCases.Name = "cmsSusCases";
+            this.cmsSusCases.Size = new System.Drawing.Size(181, 26);
+            // 
+            // viewCaseDetailsToolStripMenuItem
+            // 
+            this.viewCaseDetailsToolStripMenuItem.Name = "viewCaseDetailsToolStripMenuItem";
+            this.viewCaseDetailsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewCaseDetailsToolStripMenuItem.Text = "Manage case details";
+            this.viewCaseDetailsToolStripMenuItem.Click += new System.EventHandler(this.viewCaseDetailsToolStripMenuItem_Click);
+            // 
+            // dgvSusCases
+            // 
+            this.dgvSusCases.AllowUserToAddRows = false;
+            this.dgvSusCases.AllowUserToDeleteRows = false;
+            this.dgvSusCases.AllowUserToOrderColumns = true;
+            this.dgvSusCases.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dgvSusCases.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSusCases.ContextMenuStrip = this.cmsSusCases;
+            this.dgvSusCases.GridColor = System.Drawing.Color.MidnightBlue;
+            this.dgvSusCases.Location = new System.Drawing.Point(40, 178);
+            this.dgvSusCases.Name = "dgvSusCases";
+            this.dgvSusCases.RowHeadersWidth = 102;
+            this.dgvSusCases.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSusCases.Size = new System.Drawing.Size(531, 446);
+            this.dgvSusCases.TabIndex = 22;
+            // 
             // SystemAdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1484, 661);
-            this.Controls.Add(this.dgvCurrentAccounts);
+            this.Controls.Add(this.dgvSusCases);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblWelcomeDashboard);
             this.Controls.Add(this.menuStrip1);
@@ -112,9 +134,10 @@
             this.Name = "SystemAdminDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "My Dashboard";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCurrentAccounts)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.cmsSusCases.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSusCases)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,9 +147,11 @@
 
         private System.Windows.Forms.Label lblWelcomeDashboard;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvCurrentAccounts;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem aboutMoneyMoveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip cmsSusCases;
+        private System.Windows.Forms.ToolStripMenuItem viewCaseDetailsToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dgvSusCases;
     }
 }

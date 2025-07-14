@@ -67,17 +67,24 @@
     <Compile Include="AboutMoneyMove.Designer.cs">
       <DependentUpon>AboutMoneyMove.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateNewCurrencyAccount.cs">
+    <Compile Include="ManageSuspiciousCaseDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateNewCurrencyAccount.Designer.cs">
+    <Compile Include="ManageSuspiciousCaseDetails.Designer.cs">
+      <DependentUpon>ManageSuspiciousCaseDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SuspiciousCase.cs" />
+    <Compile Include="System User Functionality\CreateNewCurrencyAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System User Functionality\CreateNewCurrencyAccount.Designer.cs">
       <DependentUpon>CreateNewCurrencyAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="CurrencyAccount.cs" />
-    <Compile Include="SetDesignatedAccount.cs">
+    <Compile Include="Objects\CurrencyAccount.cs" />
+    <Compile Include="System User Functionality\SetDesignatedAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SetDesignatedAccount.Designer.cs">
+    <Compile Include="System User Functionality\SetDesignatedAccount.Designer.cs">
       <DependentUpon>SetDesignatedAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagementClasses\FormManagement.cs" />
@@ -96,45 +103,48 @@
       <DependentUpon>SystemAdminLoginPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Objects\Person.cs" />
-    <Compile Include="SystemUserDashboard.cs">
+    <Compile Include="System User Functionality\SystemUserDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SystemUserDashboard.Designer.cs">
+    <Compile Include="System User Functionality\SystemUserDashboard.Designer.cs">
       <DependentUpon>SystemUserDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="SystemUserLoginPage.cs">
+    <Compile Include="System User Functionality\SystemUserLoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SystemUserLoginPage.Designer.cs">
+    <Compile Include="System User Functionality\SystemUserLoginPage.Designer.cs">
       <DependentUpon>SystemUserLoginPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TransferFunds.cs">
+    <Compile Include="System User Functionality\TransferFunds.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TransferFunds.Designer.cs">
+    <Compile Include="System User Functionality\TransferFunds.Designer.cs">
       <DependentUpon>TransferFunds.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewCurrencyExchangeRates.cs">
+    <Compile Include="System User Functionality\ViewCurrencyExchangeRates.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewCurrencyExchangeRates.Designer.cs">
+    <Compile Include="System User Functionality\ViewCurrencyExchangeRates.Designer.cs">
       <DependentUpon>ViewCurrencyExchangeRates.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewSelectedAccount.cs">
+    <Compile Include="System User Functionality\ViewSelectedAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewSelectedAccount.Designer.cs">
+    <Compile Include="System User Functionality\ViewSelectedAccount.Designer.cs">
       <DependentUpon>ViewSelectedAccount.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AboutMoneyMove.resx">
       <DependentUpon>AboutMoneyMove.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateNewCurrencyAccount.resx">
+    <EmbeddedResource Include="ManageSuspiciousCaseDetails.resx">
+      <DependentUpon>ManageSuspiciousCaseDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System User Functionality\CreateNewCurrencyAccount.resx">
       <DependentUpon>CreateNewCurrencyAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SetDesignatedAccount.resx">
+    <EmbeddedResource Include="System User Functionality\SetDesignatedAccount.resx">
       <DependentUpon>SetDesignatedAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -152,19 +162,19 @@
     <EmbeddedResource Include="SystemAdminLoginPage.resx">
       <DependentUpon>SystemAdminLoginPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SystemUserDashboard.resx">
+    <EmbeddedResource Include="System User Functionality\SystemUserDashboard.resx">
       <DependentUpon>SystemUserDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SystemUserLoginPage.resx">
+    <EmbeddedResource Include="System User Functionality\SystemUserLoginPage.resx">
       <DependentUpon>SystemUserLoginPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TransferFunds.resx">
+    <EmbeddedResource Include="System User Functionality\TransferFunds.resx">
       <DependentUpon>TransferFunds.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewCurrencyExchangeRates.resx">
+    <EmbeddedResource Include="System User Functionality\ViewCurrencyExchangeRates.resx">
       <DependentUpon>ViewCurrencyExchangeRates.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewSelectedAccount.resx">
+    <EmbeddedResource Include="System User Functionality\ViewSelectedAccount.resx">
       <DependentUpon>ViewSelectedAccount.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
