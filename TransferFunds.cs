@@ -5,10 +5,12 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace MoneyMovePrototype
 {
@@ -87,6 +89,20 @@ namespace MoneyMovePrototype
             return Regex.IsMatch(input, @"^\d+(\.\d{1,2})?$");
         }
 
+        private void txtAmountToTranfer_TextChanged(object sender, EventArgs e)
+        {
+            if (!IsValidNumberInput(txtAmountToTransfer.Text))
+            {
+                btnTransferFunds.Hide();
+                lblTransferFormatWarning.Show();
+            }
+            else
+            {
+                btnTransferFunds.Show();
+                lblTransferFormatWarning.Hide();
+            }
+        }
+
         private bool CheckIfFundsAvailable()
         {
             int userID=SessionManager.Instance._idOfUser;
@@ -137,7 +153,7 @@ namespace MoneyMovePrototype
                 return false;
             }
         }
-        private void ConvertCurrency()
+        private decimal ConvertCurrency()
         {
             int caid;
             decimal amountToConvert=Convert.ToDecimal(txtAmountToTransfer.Text);
@@ -189,30 +205,14 @@ namespace MoneyMovePrototype
                 decimal amountBeingTransferredInTargetAccountCurrency = amountBeingTransferredinGBP * multiplierForTargetAccountAmount;
                 decimal finalAmount = Math.Round(amountBeingTransferredInTargetAccountCurrency, 2);
                 txtAmountInTarget.Text = Convert.ToString(finalAmount);
+                return finalAmount;
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show(Convert.ToString(ex));
+                return 0;
             } 
-        }
-        private void txtAmountToTranfer_TextChanged(object sender, EventArgs e)
-        {
-            if (!IsValidNumberInput(txtAmountToTransfer.Text))
-            {
-                btnTransferFunds.Hide();
-                lblTransferFormatWarning.Show();
-            }
-            else
-            {
-                btnTransferFunds.Show();
-                lblTransferFormatWarning.Hide();
-            }
-        }
-
-        private void btnTransferFunds_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnPreviewAmount_Click(object sender, EventArgs e)
@@ -221,6 +221,91 @@ namespace MoneyMovePrototype
             if (areFundsSufficienct)
             {
                 ConvertCurrency();
+            }
+        }
+
+        private void ExecuteTransfer(string sourceAccount, string targetAccount, decimal amountToSubtractFromSource, decimal amountToAddToTarget)
+        {
+            string queryToGetSourceTotal = "SELECT [Balance In Currency] FROM dbo.[CurrencyAccountsToUsersTable] WHERE [User ID]=@userID AND [Account Name]=@stan";
+            string queryToGetTargetTotal = "SELECT [Balance In Currency] FROM dbo.[CurrencyAccountsToUsersTable] WHERE [User ID]=@userID AND [Account Name]=@ttan";
+            decimal sourceTotal;
+            decimal targetTotal;
+            string queryToSubtractFromSource = "UPDATE dbo.[CurrencyAccountsToUsersTable] SET [Balance In Currency]=@nb WHERE [User ID]=@userID AND [Account Name]=@san";
+            string queryToAddToTarget = "UPDATE dbo.[CurrencyAccountsToUsersTable] SET [Balance In Currency]=@nt WHERE [USER ID]=@userID AND [Account Name]=@tan";
+            decimal newSourceBalance;
+            decimal newTargetBalance;
+
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    using (SqlCommand cmd = new SqlCommand(queryToGetSourceTotal, con))
+                    {
+                        cmd.Parameters.AddWithValue("@stan", cmbSourceAccounts.Text);
+                        cmd.Parameters.AddWithValue("@userID", SessionManager.Instance._idOfUser);
+                        con.Open();
+                        object result = cmd.ExecuteScalar();
+                        con.Close();
+                        sourceTotal = Convert.ToDecimal(result); //source total before transfer
+                    }
+                    using (SqlCommand cmd2 = new SqlCommand(queryToGetTargetTotal, con))
+                    {
+                        cmd2.Parameters.AddWithValue("@ttan", cmbTargetAccounts.Text);
+                        cmd2.Parameters.AddWithValue("@userID", SessionManager.Instance._idOfUser);
+                        con.Open();
+                        object result2 = cmd2.ExecuteScalar();
+                        con.Close();
+                        targetTotal = Convert.ToDecimal(result2); //target total before transfer
+                    }
+                }
+                newSourceBalance = sourceTotal - amountToSubtractFromSource;
+                newTargetBalance = targetTotal + amountToAddToTarget;
+                using (SqlConnection con2 = new SqlConnection(connectionString))
+                {
+                    //subract amount from source account
+                    using (SqlCommand cmd3 = new SqlCommand(queryToSubtractFromSource, con2))
+                    {
+                        cmd3.Parameters.AddWithValue("@nb", newSourceBalance);
+                        cmd3.Parameters.AddWithValue("@san", cmbSourceAccounts.Text);
+                        cmd3.Parameters.AddWithValue("@userID", SessionManager.Instance._idOfUser);
+                        con2.Open();
+                        object result = cmd3.ExecuteNonQuery();
+                        con2.Close();
+                        sourceTotal = Convert.ToDecimal(result);
+                    }
+                    //add amount to target account
+                    using (SqlCommand cmd4 = new SqlCommand(queryToAddToTarget, con2))
+                    {
+                        cmd4.Parameters.AddWithValue("@nt", newTargetBalance);
+                        cmd4.Parameters.AddWithValue("@tan", cmbTargetAccounts.Text);
+                        cmd4.Parameters.AddWithValue("@userID", SessionManager.Instance._idOfUser);
+                        con2.Open();
+                        object result2 = cmd4.ExecuteNonQuery();
+                        con2.Close();
+                        targetTotal = Convert.ToDecimal(result2);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Convert.ToString(ex));
+            }
+            
+        }
+        private void btnTransferFunds_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal amountToAdd = ConvertCurrency();
+                decimal amountToSubtract = Convert.ToDecimal(txtAmountToTransfer.Text);
+                ExecuteTransfer(cmbSourceAccounts.Text, cmbTargetAccounts.Text, amountToSubtract, amountToAdd);
+                MessageBox.Show("Transfer complete!");
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(Convert.ToString(ex));
             }
         }
     }

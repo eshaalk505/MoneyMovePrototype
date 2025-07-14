@@ -56,7 +56,6 @@ namespace MoneyMovePrototype
                     cmd.ExecuteNonQuery();
                     con.Close();
                 }
-
             }
         }
 
