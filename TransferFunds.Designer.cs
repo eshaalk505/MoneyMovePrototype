@@ -40,6 +40,8 @@
             this.lblAmountReceived = new System.Windows.Forms.Label();
             this.txtAmountInTarget = new System.Windows.Forms.TextBox();
             this.lblTransferFormatWarning = new System.Windows.Forms.Label();
+            this.lblErrorsAndWarnings = new System.Windows.Forms.Label();
+            this.btnPreviewAmount = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblWelcomeDashboard
@@ -145,6 +147,7 @@
             this.btnTransferFunds.TabIndex = 17;
             this.btnTransferFunds.Text = "Transfer funds";
             this.btnTransferFunds.UseVisualStyleBackColor = false;
+            this.btnTransferFunds.Click += new System.EventHandler(this.btnTransferFunds_Click);
             // 
             // lblAccountWarning
             // 
@@ -195,9 +198,34 @@
             this.lblTransferFormatWarning.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblTransferFormatWarning.Location = new System.Drawing.Point(34, 437);
             this.lblTransferFormatWarning.Name = "lblTransferFormatWarning";
-            this.lblTransferFormatWarning.Size = new System.Drawing.Size(311, 19);
+            this.lblTransferFormatWarning.Size = new System.Drawing.Size(279, 19);
             this.lblTransferFormatWarning.TabIndex = 25;
-            this.lblTransferFormatWarning.Text = "WARNING: please only use numbers (0-9) and";
+            this.lblTransferFormatWarning.Text = "Error: please only use numbers (0-9) and";
+            // 
+            // lblErrorsAndWarnings
+            // 
+            this.lblErrorsAndWarnings.AutoSize = true;
+            this.lblErrorsAndWarnings.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorsAndWarnings.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorsAndWarnings.Location = new System.Drawing.Point(29, 574);
+            this.lblErrorsAndWarnings.Name = "lblErrorsAndWarnings";
+            this.lblErrorsAndWarnings.Size = new System.Drawing.Size(175, 26);
+            this.lblErrorsAndWarnings.TabIndex = 26;
+            this.lblErrorsAndWarnings.Text = "WARNING/ERROR";
+            // 
+            // btnPreviewAmount
+            // 
+            this.btnPreviewAmount.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnPreviewAmount.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPreviewAmount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPreviewAmount.Location = new System.Drawing.Point(850, 437);
+            this.btnPreviewAmount.Margin = new System.Windows.Forms.Padding(1);
+            this.btnPreviewAmount.Name = "btnPreviewAmount";
+            this.btnPreviewAmount.Size = new System.Drawing.Size(109, 62);
+            this.btnPreviewAmount.TabIndex = 27;
+            this.btnPreviewAmount.Text = "Preview amount";
+            this.btnPreviewAmount.UseVisualStyleBackColor = false;
+            this.btnPreviewAmount.Click += new System.EventHandler(this.btnPreviewAmount_Click);
             // 
             // TransferFunds
             // 
@@ -205,6 +233,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1484, 661);
+            this.Controls.Add(this.btnPreviewAmount);
+            this.Controls.Add(this.lblErrorsAndWarnings);
             this.Controls.Add(this.lblTransferFormatWarning);
             this.Controls.Add(this.txtAmountInTarget);
             this.Controls.Add(this.lblAmountReceived);
@@ -239,5 +269,7 @@
         private System.Windows.Forms.Label lblAmountReceived;
         private System.Windows.Forms.TextBox txtAmountInTarget;
         private System.Windows.Forms.Label lblTransferFormatWarning;
+        private System.Windows.Forms.Label lblErrorsAndWarnings;
+        private System.Windows.Forms.Button btnPreviewAmount;
     }
 }
