@@ -74,5 +74,15 @@ namespace MoneyMovePrototype
             CurrencyAccount accountToView = new CurrencyAccount(Convert.ToString(dgvCurrentAccounts.SelectedCells[0].Value), Convert.ToString(dgvCurrentAccounts.SelectedCells[1].Value), Convert.ToString(dgvCurrentAccounts.SelectedCells[2].Value), Convert.ToDecimal(dgvCurrentAccounts.SelectedCells[3].Value));
             FormManagement.NavigateToNextForm(this, new ViewSelectedAccount(accountToView));
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormManagement.NavigateToNextForm(this, new CreateNewCurrencyAccount());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormManagement.NavigateToNextForm(this, new TransferFunds());
+        }
     }
 }

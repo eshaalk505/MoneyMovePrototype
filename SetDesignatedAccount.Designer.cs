@@ -99,7 +99,7 @@
             "Other"});
             this.cmbAccountProvider.Location = new System.Drawing.Point(332, 227);
             this.cmbAccountProvider.Name = "cmbAccountProvider";
-            this.cmbAccountProvider.Size = new System.Drawing.Size(121, 27);
+            this.cmbAccountProvider.Size = new System.Drawing.Size(141, 27);
             this.cmbAccountProvider.TabIndex = 5;
             this.cmbAccountProvider.SelectedIndexChanged += new System.EventHandler(this.cmbAccountProvider_SelectedIndexChanged);
             // 
@@ -200,11 +200,11 @@
             // lblOtherAccount
             // 
             this.lblOtherAccount.AutoSize = true;
-            this.lblOtherAccount.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOtherAccount.Font = new System.Drawing.Font("Candara", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOtherAccount.ForeColor = System.Drawing.Color.MidnightBlue;
             this.lblOtherAccount.Location = new System.Drawing.Point(60, 277);
             this.lblOtherAccount.Name = "lblOtherAccount";
-            this.lblOtherAccount.Size = new System.Drawing.Size(318, 19);
+            this.lblOtherAccount.Size = new System.Drawing.Size(316, 19);
             this.lblOtherAccount.TabIndex = 20;
             this.lblOtherAccount.Text = "Please enter the account provider name here:";
             // 
