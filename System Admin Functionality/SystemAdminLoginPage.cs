@@ -20,6 +20,12 @@ namespace MoneyMovePrototype
             InitializeComponent();
         }
 
+        private void SystemAdminLoginPage_Load(object sender, EventArgs e)
+        {
+            pbxSystemAdmin.Image = Image.FromFile(@"systemAdmin.png");
+            pbxBackToWelcomePage.Image = Image.FromFile(@"arrow.png");
+        }
+
         private void lblGoToOtherPage_Click(object sender, EventArgs e)
         {
             FormManagement.NavigateToNextForm(this, new SystemUserLoginPage());
@@ -29,7 +35,7 @@ namespace MoneyMovePrototype
         {
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text.Trim();
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\eshaa\\Documents\\Year 2\\Software Engineering Concepts + Methods\\MoneyMovePrototype\\MoneyMoveDB.mdf\";Integrated Security=True";
+            string connectionString = "Server=moneymoveserver.database.windows.net;Database=MoneyMoveDatabase;User Id=CloudSA51e7d7d1;Password=uglyDuckling15!;Encrypt=True;";
             string usernameCountQuery = "SELECT COUNT(*) FROM dbo.[UserDetailsTable] WHERE Username=@username";
             string verificationQuery = "SELECT * FROM dbo.[UserDetailsTable] WHERE Username= '" + username + "' AND Password='" + password + "'";
             string roleVerificationQuery= @"SELECT IsSystemAdministrator FROM dbo.[UserDetailsTable] WHERE Username = @Username AND Password = @Password";
@@ -96,5 +102,24 @@ namespace MoneyMovePrototype
                     }
                 }
         }   }
+
+        private void pbxBackToWelcomePage_Click(object sender, EventArgs e)
+        {
+            FormManagement.MoveBackToPreviousForm(this, new WelcomeToMoneyMove());
+        }
+
+        private void btnShowHidePassword_Click(object sender, EventArgs e)
+        {
+            if (btnShowHidePassword.Text == "Show")
+            {
+                btnShowHidePassword.Text = "Hide";
+                txtPassword.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                btnShowHidePassword.Text = "Show";
+                txtPassword.UseSystemPasswordChar = true;
+            }
+        }
     }
 }

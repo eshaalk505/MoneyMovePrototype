@@ -13,10 +13,11 @@ namespace MoneyMovePrototype
 {
     public partial class CreateNewCurrencyAccount : Form
     {
-        string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\eshaa\\Documents\\Year 2\\Software Engineering Concepts + Methods\\MoneyMovePrototype\\MoneyMoveDB.mdf\";Integrated Security=True";
+        string connectionString = "Server=moneymoveserver.database.windows.net;Database=MoneyMoveDatabase;User Id=CloudSA51e7d7d1;Password=uglyDuckling15!;Encrypt=True;";
         public CreateNewCurrencyAccount()
         {
             InitializeComponent();
+            pbxBackToDashboard.Image = Image.FromFile(@"arrow.png");
         }
 
         private void createNewAccountRecord(int userID, int currencyAccountID, string accountName, float balance)
@@ -60,6 +61,15 @@ namespace MoneyMovePrototype
                 con.Close();
             }
             createNewAccountRecord(userID, currencyAccountID,txtAccountName.Text,balance);
+        }
+
+        private void pbxBackToDashboard_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you would like to proceed? Any unsaved changes will be lost.", "Confirm Action", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                FormManagement.MoveBackToPreviousForm(this, new SystemUserDashboard());
+            }
         }
     }
 }

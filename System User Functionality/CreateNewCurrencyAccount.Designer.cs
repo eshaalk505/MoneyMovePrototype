@@ -34,6 +34,8 @@
             this.cmbAccountCurrency = new System.Windows.Forms.ComboBox();
             this.txtAccountName = new System.Windows.Forms.TextBox();
             this.btnCreateAccount = new System.Windows.Forms.Button();
+            this.pbxBackToDashboard = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBackToDashboard)).BeginInit();
             this.SuspendLayout();
             // 
             // lblWelcomeDashboard
@@ -41,7 +43,7 @@
             this.lblWelcomeDashboard.AutoSize = true;
             this.lblWelcomeDashboard.Font = new System.Drawing.Font("Candara", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcomeDashboard.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblWelcomeDashboard.Location = new System.Drawing.Point(21, 30);
+            this.lblWelcomeDashboard.Location = new System.Drawing.Point(22, 83);
             this.lblWelcomeDashboard.Name = "lblWelcomeDashboard";
             this.lblWelcomeDashboard.Size = new System.Drawing.Size(860, 59);
             this.lblWelcomeDashboard.TabIndex = 1;
@@ -52,7 +54,7 @@
             this.lblAccountProvider.AutoSize = true;
             this.lblAccountProvider.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccountProvider.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblAccountProvider.Location = new System.Drawing.Point(26, 139);
+            this.lblAccountProvider.Location = new System.Drawing.Point(27, 192);
             this.lblAccountProvider.Name = "lblAccountProvider";
             this.lblAccountProvider.Size = new System.Drawing.Size(337, 29);
             this.lblAccountProvider.TabIndex = 5;
@@ -63,7 +65,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(26, 223);
+            this.label1.Location = new System.Drawing.Point(27, 276);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(177, 29);
             this.label1.TabIndex = 6;
@@ -86,7 +88,7 @@
             "Indian Rupee",
             "Swiss Franc",
             "New Zealand Dollar"});
-            this.cmbAccountCurrency.Location = new System.Drawing.Point(221, 228);
+            this.cmbAccountCurrency.Location = new System.Drawing.Point(222, 281);
             this.cmbAccountCurrency.Name = "cmbAccountCurrency";
             this.cmbAccountCurrency.Size = new System.Drawing.Size(169, 27);
             this.cmbAccountCurrency.TabIndex = 9;
@@ -95,7 +97,7 @@
             // 
             this.txtAccountName.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAccountName.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtAccountName.Location = new System.Drawing.Point(369, 141);
+            this.txtAccountName.Location = new System.Drawing.Point(370, 194);
             this.txtAccountName.Name = "txtAccountName";
             this.txtAccountName.Size = new System.Drawing.Size(198, 27);
             this.txtAccountName.TabIndex = 22;
@@ -114,12 +116,23 @@
             this.btnCreateAccount.UseVisualStyleBackColor = false;
             this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
             // 
+            // pbxBackToDashboard
+            // 
+            this.pbxBackToDashboard.Location = new System.Drawing.Point(14, 4);
+            this.pbxBackToDashboard.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.pbxBackToDashboard.Name = "pbxBackToDashboard";
+            this.pbxBackToDashboard.Size = new System.Drawing.Size(81, 72);
+            this.pbxBackToDashboard.TabIndex = 25;
+            this.pbxBackToDashboard.TabStop = false;
+            this.pbxBackToDashboard.Click += new System.EventHandler(this.pbxBackToDashboard_Click);
+            // 
             // CreateNewCurrencyAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1484, 661);
+            this.Controls.Add(this.pbxBackToDashboard);
             this.Controls.Add(this.btnCreateAccount);
             this.Controls.Add(this.txtAccountName);
             this.Controls.Add(this.cmbAccountCurrency);
@@ -128,6 +141,7 @@
             this.Controls.Add(this.lblWelcomeDashboard);
             this.Name = "CreateNewCurrencyAccount";
             this.Text = "Create New Account";
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBackToDashboard)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,5 +155,6 @@
         private System.Windows.Forms.ComboBox cmbAccountCurrency;
         private System.Windows.Forms.TextBox txtAccountName;
         private System.Windows.Forms.Button btnCreateAccount;
+        private System.Windows.Forms.PictureBox pbxBackToDashboard;
     }
 }

@@ -22,5 +22,14 @@ namespace MoneyMovePrototype
             previousForm.ShowDialog();
             presentForm.Close();
         }
+
+        public static void LogoutFromSystem()
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to log out? Any unsaved changes will be lost and the site will close down.", "Confirm Action", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                SessionManager.Instance.FinishSession();
+            }
+        }
     }
 }

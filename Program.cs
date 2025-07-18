@@ -16,7 +16,7 @@ namespace MoneyMovePrototype
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SystemUserLoginPage());
+            Application.Run(new WelcomeToMoneyMove());
         }
     }
 }

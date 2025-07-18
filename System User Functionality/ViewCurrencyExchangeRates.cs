@@ -15,7 +15,7 @@ namespace MoneyMovePrototype
     {
         private void LoadDGVData()
         {
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\eshaa\\Documents\\Year 2\\Software Engineering Concepts + Methods\\MoneyMovePrototype\\MoneyMoveDB.mdf\";Integrated Security=True";
+            string connectionString = "Server=moneymoveserver.database.windows.net;Database=MoneyMoveDatabase;User Id=CloudSA51e7d7d1;Password=uglyDuckling15!;Encrypt=True;";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 string query = "SELECT [Currency],[Currency Code],[Exchange Rate] FROM dbo.[CurrencyAccountsTable] WHERE [Exchange Rate] != '£1'";
@@ -32,7 +32,13 @@ namespace MoneyMovePrototype
         public ViewCurrencyExchangeRates()
         {
             InitializeComponent();
+            pbxBackToDashbaord.Image = Image.FromFile(@"arrow.png");
             LoadDGVData();
+        }
+
+        private void pbxBackToDashbaord_Click(object sender, EventArgs e)
+        {
+            FormManagement.MoveBackToPreviousForm(this, new SystemUserDashboard());
         }
     }
 }

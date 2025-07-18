@@ -44,6 +44,8 @@
             this.lblOtherAccount = new System.Windows.Forms.Label();
             this.txtAccountProvider = new System.Windows.Forms.TextBox();
             this.lblExpDateFormat = new System.Windows.Forms.Label();
+            this.pbxBackToDashboard = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBackToDashboard)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEnterDetails
@@ -51,7 +53,7 @@
             this.lblEnterDetails.AutoSize = true;
             this.lblEnterDetails.Font = new System.Drawing.Font("Candara", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEnterDetails.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblEnterDetails.Location = new System.Drawing.Point(26, 33);
+            this.lblEnterDetails.Location = new System.Drawing.Point(26, 79);
             this.lblEnterDetails.Name = "lblEnterDetails";
             this.lblEnterDetails.Size = new System.Drawing.Size(676, 59);
             this.lblEnterDetails.TabIndex = 1;
@@ -62,7 +64,7 @@
             this.lblAccountInfoNote.AutoSize = true;
             this.lblAccountInfoNote.Font = new System.Drawing.Font("Candara", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccountInfoNote.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblAccountInfoNote.Location = new System.Drawing.Point(30, 126);
+            this.lblAccountInfoNote.Location = new System.Drawing.Point(30, 172);
             this.lblAccountInfoNote.Name = "lblAccountInfoNote";
             this.lblAccountInfoNote.Size = new System.Drawing.Size(963, 36);
             this.lblAccountInfoNote.TabIndex = 3;
@@ -73,7 +75,7 @@
             this.lblAccountProvider.AutoSize = true;
             this.lblAccountProvider.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccountProvider.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblAccountProvider.Location = new System.Drawing.Point(30, 223);
+            this.lblAccountProvider.Location = new System.Drawing.Point(30, 269);
             this.lblAccountProvider.Name = "lblAccountProvider";
             this.lblAccountProvider.Size = new System.Drawing.Size(296, 29);
             this.lblAccountProvider.TabIndex = 4;
@@ -97,7 +99,7 @@
             "The Co-operative Bank",
             "Virgin Money UK",
             "Other"});
-            this.cmbAccountProvider.Location = new System.Drawing.Point(332, 227);
+            this.cmbAccountProvider.Location = new System.Drawing.Point(332, 273);
             this.cmbAccountProvider.Name = "cmbAccountProvider";
             this.cmbAccountProvider.Size = new System.Drawing.Size(141, 27);
             this.cmbAccountProvider.TabIndex = 5;
@@ -108,7 +110,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(29, 337);
+            this.label1.Location = new System.Drawing.Point(29, 383);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(255, 29);
             this.label1.TabIndex = 6;
@@ -119,7 +121,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label2.Location = new System.Drawing.Point(670, 226);
+            this.label2.Location = new System.Drawing.Point(670, 272);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(176, 29);
             this.label2.TabIndex = 7;
@@ -129,7 +131,7 @@
             // 
             this.txtExpDate.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtExpDate.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtExpDate.Location = new System.Drawing.Point(852, 228);
+            this.txtExpDate.Location = new System.Drawing.Point(852, 274);
             this.txtExpDate.Name = "txtExpDate";
             this.txtExpDate.Size = new System.Drawing.Size(132, 27);
             this.txtExpDate.TabIndex = 9;
@@ -139,7 +141,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label3.Location = new System.Drawing.Point(670, 410);
+            this.label3.Location = new System.Drawing.Point(670, 456);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(220, 29);
             this.label3.TabIndex = 10;
@@ -150,7 +152,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label4.Location = new System.Drawing.Point(670, 337);
+            this.label4.Location = new System.Drawing.Point(670, 383);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(160, 29);
             this.label4.TabIndex = 11;
@@ -174,7 +176,7 @@
             // 
             this.txtCardNum.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCardNum.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtCardNum.Location = new System.Drawing.Point(290, 342);
+            this.txtCardNum.Location = new System.Drawing.Point(290, 388);
             this.txtCardNum.Name = "txtCardNum";
             this.txtCardNum.Size = new System.Drawing.Size(238, 27);
             this.txtCardNum.TabIndex = 17;
@@ -183,7 +185,7 @@
             // 
             this.txtName.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtName.Location = new System.Drawing.Point(836, 339);
+            this.txtName.Location = new System.Drawing.Point(836, 385);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(238, 27);
             this.txtName.TabIndex = 18;
@@ -192,7 +194,7 @@
             // 
             this.txtSec.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSec.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtSec.Location = new System.Drawing.Point(896, 412);
+            this.txtSec.Location = new System.Drawing.Point(896, 458);
             this.txtSec.Name = "txtSec";
             this.txtSec.Size = new System.Drawing.Size(101, 27);
             this.txtSec.TabIndex = 19;
@@ -202,7 +204,7 @@
             this.lblOtherAccount.AutoSize = true;
             this.lblOtherAccount.Font = new System.Drawing.Font("Candara", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOtherAccount.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblOtherAccount.Location = new System.Drawing.Point(60, 277);
+            this.lblOtherAccount.Location = new System.Drawing.Point(60, 323);
             this.lblOtherAccount.Name = "lblOtherAccount";
             this.lblOtherAccount.Size = new System.Drawing.Size(316, 19);
             this.lblOtherAccount.TabIndex = 20;
@@ -212,7 +214,7 @@
             // 
             this.txtAccountProvider.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAccountProvider.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtAccountProvider.Location = new System.Drawing.Point(255, 299);
+            this.txtAccountProvider.Location = new System.Drawing.Point(255, 345);
             this.txtAccountProvider.Name = "txtAccountProvider";
             this.txtAccountProvider.Size = new System.Drawing.Size(198, 27);
             this.txtAccountProvider.TabIndex = 21;
@@ -222,11 +224,21 @@
             this.lblExpDateFormat.AutoSize = true;
             this.lblExpDateFormat.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExpDateFormat.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblExpDateFormat.Location = new System.Drawing.Point(701, 274);
+            this.lblExpDateFormat.Location = new System.Drawing.Point(701, 320);
             this.lblExpDateFormat.Name = "lblExpDateFormat";
             this.lblExpDateFormat.Size = new System.Drawing.Size(231, 19);
             this.lblExpDateFormat.TabIndex = 22;
             this.lblExpDateFormat.Text = "Please use the following format:";
+            // 
+            // pbxBackToDashboard
+            // 
+            this.pbxBackToDashboard.Location = new System.Drawing.Point(14, 4);
+            this.pbxBackToDashboard.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.pbxBackToDashboard.Name = "pbxBackToDashboard";
+            this.pbxBackToDashboard.Size = new System.Drawing.Size(81, 72);
+            this.pbxBackToDashboard.TabIndex = 25;
+            this.pbxBackToDashboard.TabStop = false;
+            this.pbxBackToDashboard.Click += new System.EventHandler(this.pbxBackToDashboard_Click);
             // 
             // SetDesignatedAccount
             // 
@@ -234,6 +246,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1484, 661);
+            this.Controls.Add(this.pbxBackToDashboard);
             this.Controls.Add(this.lblExpDateFormat);
             this.Controls.Add(this.txtAccountProvider);
             this.Controls.Add(this.lblOtherAccount);
@@ -253,6 +266,7 @@
             this.Name = "SetDesignatedAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Set My Designated UK Bank Account";
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBackToDashboard)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,5 +290,6 @@
         private System.Windows.Forms.Label lblOtherAccount;
         private System.Windows.Forms.TextBox txtAccountProvider;
         private System.Windows.Forms.Label lblExpDateFormat;
+        private System.Windows.Forms.PictureBox pbxBackToDashboard;
     }
 }

@@ -15,7 +15,7 @@ namespace MoneyMovePrototype
 {
     public partial class SetDesignatedAccount : Form
     {
-        public string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\eshaa\\Documents\\Year 2\\Software Engineering Concepts + Methods\\MoneyMovePrototype\\MoneyMoveDB.mdf\";Integrated Security=True";
+        string connectionString = "Server=moneymoveserver.database.windows.net;Database=MoneyMoveDatabase;User Id=CloudSA51e7d7d1;Password=uglyDuckling15!;Encrypt=True;";
         public SetDesignatedAccount()
         {
             InitializeComponent();
@@ -23,6 +23,8 @@ namespace MoneyMovePrototype
             lblExpDateFormat.Text = "Please use the following format:" + Environment.NewLine + "MM/YY e.g. 03/27";
             lblOtherAccount.Hide();
             txtAccountProvider.Hide();
+            pbxBackToDashboard.Image = Image.FromFile(@"arrow.png");
+
         }
 
         private void cmbAccountProvider_SelectedIndexChanged(object sender, EventArgs e)
@@ -121,6 +123,15 @@ namespace MoneyMovePrototype
                 MessageBox.Show(Convert.ToString(ex));
             }
 
+        }
+
+        private void pbxBackToDashboard_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you would like to proceed? Any unsaved changes will be lost.", "Confirm Action", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                FormManagement.MoveBackToPreviousForm(this, new SystemUserDashboard());
+            }
         }
     }
 }

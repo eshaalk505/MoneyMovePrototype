@@ -9,7 +9,8 @@ namespace MoneyMovePrototype
     public class SuspiciousCase
     {
         private int _caseID;
-        private int _customerID;
+        private string _customerForename;
+        private string _customerSurname;
         private string _caseStatus;
         private string _reason;
         private bool _evidenceProvided;
@@ -17,10 +18,11 @@ namespace MoneyMovePrototype
         private string _userAccountStatus;
         private string _additionalInfo;
 
-        public SuspiciousCase(int caseID, int customerID, string caseStatus, string reason, bool evidenceProvided, string refundStatus, string userAccountStatus, string additionalInfo)
+        public SuspiciousCase(int caseID, string custForename, string custSurname, string caseStatus, string reason, bool evidenceProvided, string refundStatus, string userAccountStatus, string additionalInfo)
         {
             this._caseID = caseID;
-            this._customerID = customerID;
+            this._customerForename = custForename;
+            this._customerSurname=custSurname;
             this._caseStatus = caseStatus;
             this._reason = reason;
             this._evidenceProvided = evidenceProvided;
@@ -41,15 +43,27 @@ namespace MoneyMovePrototype
             }
         }
 
-        public int customerID
+        public string customerForename
         {
             get
             {
-                return this._customerID;
+                return this._customerForename;
             }
             set
             {
-                this._customerID = value;
+                this._customerForename = value;
+            }
+        }
+
+        public string customerSurname
+        {
+            get
+            {
+                return this._customerSurname;
+            }
+            set
+            {
+                this._customerSurname = value;
             }
         }
 

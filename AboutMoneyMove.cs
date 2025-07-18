@@ -12,7 +12,8 @@ namespace MoneyMovePrototype
 {
     public partial class AboutMoneyMove : Form
     {
-        public AboutMoneyMove()
+        private Form _previousForm;
+        public AboutMoneyMove(Form previousForm)
         {
             InitializeComponent();
             lblAboutDescription.Text = "MoneyMove, based in the UK, aims to provide money management and transfer services across the world." + Environment.NewLine +
@@ -22,6 +23,13 @@ namespace MoneyMovePrototype
                                      "aims to protect against fraudulent activity by detecting suspicious transactions and handling these accordingly." + Environment.NewLine +
                                      "This project was built as part of the Software Engineering Concepts and Methods assignment as a prototype of a" + Environment.NewLine +
                                      "pre-defined money transfer system specification.";
+            _previousForm = previousForm;
+            pbxBackToPreviousPage.Image = Image.FromFile(@"arrow.png");
+        }
+
+        private void pbxBackToPreviousPage_Click(object sender, EventArgs e)
+        {
+            FormManagement.MoveBackToPreviousForm(this, _previousForm);
         }
     }
 }

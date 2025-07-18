@@ -67,13 +67,13 @@
     <Compile Include="AboutMoneyMove.Designer.cs">
       <DependentUpon>AboutMoneyMove.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManageSuspiciousCaseDetails.cs">
+    <Compile Include="System Admin Functionality\ManageSuspiciousCaseDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManageSuspiciousCaseDetails.Designer.cs">
+    <Compile Include="System Admin Functionality\ManageSuspiciousCaseDetails.Designer.cs">
       <DependentUpon>ManageSuspiciousCaseDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="SuspiciousCase.cs" />
+    <Compile Include="Objects\SuspiciousCase.cs" />
     <Compile Include="System User Functionality\CreateNewCurrencyAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,16 +90,16 @@
     <Compile Include="ManagementClasses\FormManagement.cs" />
     <Compile Include="ManagementClasses\InformationManagementMethods.cs" />
     <Compile Include="Objects\SessionManager.cs" />
-    <Compile Include="SystemAdminDashboard.cs">
+    <Compile Include="System Admin Functionality\SystemAdminDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SystemAdminDashboard.Designer.cs">
+    <Compile Include="System Admin Functionality\SystemAdminDashboard.Designer.cs">
       <DependentUpon>SystemAdminDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="SystemAdminLoginPage.cs">
+    <Compile Include="System Admin Functionality\SystemAdminLoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SystemAdminLoginPage.Designer.cs">
+    <Compile Include="System Admin Functionality\SystemAdminLoginPage.Designer.cs">
       <DependentUpon>SystemAdminLoginPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Objects\Person.cs" />
@@ -135,10 +135,16 @@
     <Compile Include="System User Functionality\ViewSelectedAccount.Designer.cs">
       <DependentUpon>ViewSelectedAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="WelcomeToMoneyMove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WelcomeToMoneyMove.Designer.cs">
+      <DependentUpon>WelcomeToMoneyMove.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AboutMoneyMove.resx">
       <DependentUpon>AboutMoneyMove.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManageSuspiciousCaseDetails.resx">
+    <EmbeddedResource Include="System Admin Functionality\ManageSuspiciousCaseDetails.resx">
       <DependentUpon>ManageSuspiciousCaseDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="System User Functionality\CreateNewCurrencyAccount.resx">
@@ -156,10 +162,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SystemAdminDashboard.resx">
+    <EmbeddedResource Include="System Admin Functionality\SystemAdminDashboard.resx">
       <DependentUpon>SystemAdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SystemAdminLoginPage.resx">
+    <EmbeddedResource Include="System Admin Functionality\SystemAdminLoginPage.resx">
       <DependentUpon>SystemAdminLoginPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="System User Functionality\SystemUserDashboard.resx">
@@ -176,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="System User Functionality\ViewSelectedAccount.resx">
       <DependentUpon>ViewSelectedAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeToMoneyMove.resx">
+      <DependentUpon>WelcomeToMoneyMove.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

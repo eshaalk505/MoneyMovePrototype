@@ -42,6 +42,8 @@
             this.lblTransferFormatWarning = new System.Windows.Forms.Label();
             this.lblErrorsAndWarnings = new System.Windows.Forms.Label();
             this.btnPreviewAmount = new System.Windows.Forms.Button();
+            this.pbxBackToDashboard = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBackToDashboard)).BeginInit();
             this.SuspendLayout();
             // 
             // lblWelcomeDashboard
@@ -49,7 +51,7 @@
             this.lblWelcomeDashboard.AutoSize = true;
             this.lblWelcomeDashboard.Font = new System.Drawing.Font("Candara", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcomeDashboard.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblWelcomeDashboard.Location = new System.Drawing.Point(12, 27);
+            this.lblWelcomeDashboard.Location = new System.Drawing.Point(12, 78);
             this.lblWelcomeDashboard.Name = "lblWelcomeDashboard";
             this.lblWelcomeDashboard.Size = new System.Drawing.Size(1106, 59);
             this.lblWelcomeDashboard.TabIndex = 1;
@@ -60,7 +62,7 @@
             this.lblCurrency.AutoSize = true;
             this.lblCurrency.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrency.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblCurrency.Location = new System.Drawing.Point(29, 127);
+            this.lblCurrency.Location = new System.Drawing.Point(29, 178);
             this.lblCurrency.Name = "lblCurrency";
             this.lblCurrency.Size = new System.Drawing.Size(247, 29);
             this.lblCurrency.TabIndex = 6;
@@ -71,7 +73,7 @@
             this.lblAmountToTransfer.AutoSize = true;
             this.lblAmountToTransfer.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmountToTransfer.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblAmountToTransfer.Location = new System.Drawing.Point(29, 273);
+            this.lblAmountToTransfer.Location = new System.Drawing.Point(29, 324);
             this.lblAmountToTransfer.Name = "lblAmountToTransfer";
             this.lblAmountToTransfer.Size = new System.Drawing.Size(295, 29);
             this.lblAmountToTransfer.TabIndex = 7;
@@ -82,7 +84,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label2.Location = new System.Drawing.Point(716, 127);
+            this.label2.Location = new System.Drawing.Point(716, 178);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(238, 29);
             this.label2.TabIndex = 8;
@@ -106,7 +108,7 @@
             "The Co-operative Bank",
             "Virgin Money UK",
             "Other"});
-            this.cmbSourceAccounts.Location = new System.Drawing.Point(271, 129);
+            this.cmbSourceAccounts.Location = new System.Drawing.Point(271, 180);
             this.cmbSourceAccounts.Name = "cmbSourceAccounts";
             this.cmbSourceAccounts.Size = new System.Drawing.Size(141, 27);
             this.cmbSourceAccounts.TabIndex = 9;
@@ -129,7 +131,7 @@
             "The Co-operative Bank",
             "Virgin Money UK",
             "Other"});
-            this.cmbTargetAccounts.Location = new System.Drawing.Point(960, 129);
+            this.cmbTargetAccounts.Location = new System.Drawing.Point(960, 180);
             this.cmbTargetAccounts.Name = "cmbTargetAccounts";
             this.cmbTargetAccounts.Size = new System.Drawing.Size(141, 27);
             this.cmbTargetAccounts.TabIndex = 10;
@@ -154,7 +156,7 @@
             this.lblAccountWarning.AutoSize = true;
             this.lblAccountWarning.Font = new System.Drawing.Font("Candara", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAccountWarning.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblAccountWarning.Location = new System.Drawing.Point(717, 193);
+            this.lblAccountWarning.Location = new System.Drawing.Point(717, 244);
             this.lblAccountWarning.Name = "lblAccountWarning";
             this.lblAccountWarning.Size = new System.Drawing.Size(399, 19);
             this.lblAccountWarning.TabIndex = 21;
@@ -164,7 +166,7 @@
             // 
             this.txtAmountToTransfer.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAmountToTransfer.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtAmountToTransfer.Location = new System.Drawing.Point(38, 380);
+            this.txtAmountToTransfer.Location = new System.Drawing.Point(38, 431);
             this.txtAmountToTransfer.Name = "txtAmountToTransfer";
             this.txtAmountToTransfer.Size = new System.Drawing.Size(238, 27);
             this.txtAmountToTransfer.TabIndex = 22;
@@ -175,7 +177,7 @@
             this.lblAmountReceived.AutoSize = true;
             this.lblAmountReceived.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAmountReceived.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblAmountReceived.Location = new System.Drawing.Point(716, 273);
+            this.lblAmountReceived.Location = new System.Drawing.Point(716, 324);
             this.lblAmountReceived.Name = "lblAmountReceived";
             this.lblAmountReceived.Size = new System.Drawing.Size(374, 29);
             this.lblAmountReceived.TabIndex = 23;
@@ -185,7 +187,7 @@
             // 
             this.txtAmountInTarget.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAmountInTarget.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txtAmountInTarget.Location = new System.Drawing.Point(721, 380);
+            this.txtAmountInTarget.Location = new System.Drawing.Point(721, 431);
             this.txtAmountInTarget.Name = "txtAmountInTarget";
             this.txtAmountInTarget.ReadOnly = true;
             this.txtAmountInTarget.Size = new System.Drawing.Size(238, 27);
@@ -196,7 +198,7 @@
             this.lblTransferFormatWarning.AutoSize = true;
             this.lblTransferFormatWarning.Font = new System.Drawing.Font("Candara", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTransferFormatWarning.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblTransferFormatWarning.Location = new System.Drawing.Point(34, 437);
+            this.lblTransferFormatWarning.Location = new System.Drawing.Point(34, 488);
             this.lblTransferFormatWarning.Name = "lblTransferFormatWarning";
             this.lblTransferFormatWarning.Size = new System.Drawing.Size(279, 19);
             this.lblTransferFormatWarning.TabIndex = 25;
@@ -218,7 +220,7 @@
             this.btnPreviewAmount.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnPreviewAmount.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPreviewAmount.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPreviewAmount.Location = new System.Drawing.Point(850, 437);
+            this.btnPreviewAmount.Location = new System.Drawing.Point(850, 488);
             this.btnPreviewAmount.Margin = new System.Windows.Forms.Padding(1);
             this.btnPreviewAmount.Name = "btnPreviewAmount";
             this.btnPreviewAmount.Size = new System.Drawing.Size(109, 62);
@@ -227,12 +229,23 @@
             this.btnPreviewAmount.UseVisualStyleBackColor = false;
             this.btnPreviewAmount.Click += new System.EventHandler(this.btnPreviewAmount_Click);
             // 
+            // pbxBackToDashboard
+            // 
+            this.pbxBackToDashboard.Location = new System.Drawing.Point(14, 4);
+            this.pbxBackToDashboard.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.pbxBackToDashboard.Name = "pbxBackToDashboard";
+            this.pbxBackToDashboard.Size = new System.Drawing.Size(81, 72);
+            this.pbxBackToDashboard.TabIndex = 28;
+            this.pbxBackToDashboard.TabStop = false;
+            this.pbxBackToDashboard.Click += new System.EventHandler(this.pbxBackToDashboard_Click);
+            // 
             // TransferFunds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1484, 661);
+            this.Controls.Add(this.pbxBackToDashboard);
             this.Controls.Add(this.btnPreviewAmount);
             this.Controls.Add(this.lblErrorsAndWarnings);
             this.Controls.Add(this.lblTransferFormatWarning);
@@ -250,6 +263,7 @@
             this.Name = "TransferFunds";
             this.Text = "Transfer between Accounts";
             this.Load += new System.EventHandler(this.TransferFunds_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBackToDashboard)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,5 +285,6 @@
         private System.Windows.Forms.Label lblTransferFormatWarning;
         private System.Windows.Forms.Label lblErrorsAndWarnings;
         private System.Windows.Forms.Button btnPreviewAmount;
+        private System.Windows.Forms.PictureBox pbxBackToDashboard;
     }
 }

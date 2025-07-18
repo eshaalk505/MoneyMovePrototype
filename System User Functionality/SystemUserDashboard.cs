@@ -21,7 +21,7 @@ namespace MoneyMovePrototype
             dgvCurrentAccounts.DefaultCellStyle.ForeColor = Color.MidnightBlue;
             dgvCurrentAccounts.ColumnHeadersDefaultCellStyle.Font = new Font("Candara", 11, FontStyle.Bold);
             dgvCurrentAccounts.ColumnHeadersDefaultCellStyle.ForeColor = Color.MidnightBlue;
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\eshaa\\Documents\\Year 2\\Software Engineering Concepts + Methods\\MoneyMovePrototype\\MoneyMoveDB.mdf\";Integrated Security=True";
+            string connectionString = "Server=moneymoveserver.database.windows.net;Database=MoneyMoveDatabase;User Id=CloudSA51e7d7d1;Password=uglyDuckling15!;Encrypt=True;";
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 string query="SELECT cau.[Account Name], ca.[Currency Code],ca.[Currency Symbol],cau.[Balance In Currency] FROM dbo.[CurrencyAccountsToUsersTable] AS cau INNER JOIN CurrencyAccountsTable AS ca ON cau.[Currency Account ID] = ca.[ID] WHERE cau.[User ID] = @userID";
@@ -41,22 +41,19 @@ namespace MoneyMovePrototype
         {
             InitializeComponent();
             lblWelcomeDashboard.Text = "Welcome back " + SessionManager.Instance._forenameOfUser + "!";
+            pbxBackToWelcomePage.Image = Image.FromFile(@"arrow.png");
             LoadDGVData();
 
         }
 
         private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            DialogResult result= MessageBox.Show("Are you sure you want to log out? Any unsaved changes will be lost and the site will close down.", "Confirm Action", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
-            if (result == DialogResult.Yes)
-            {
-                SessionManager.Instance.FinishSession();
-            }
+            FormManagement.LogoutFromSystem();
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormManagement.NavigateToNextForm(this, new AboutMoneyMove());
+            FormManagement.NavigateToNextForm(this, new AboutMoneyMove(this));
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -83,6 +80,15 @@ namespace MoneyMovePrototype
         private void button2_Click(object sender, EventArgs e)
         {
             FormManagement.NavigateToNextForm(this, new TransferFunds());
+        }
+
+        private void pbxBackToWelcomePage_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("This will log you out. Are you sure you would like to proceed?", "Confirm Action", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                FormManagement.MoveBackToPreviousForm(this, new SystemUserLoginPage());
+            }
         }
     }
 }

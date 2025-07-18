@@ -16,7 +16,7 @@ namespace MoneyMovePrototype
 {
     public partial class TransferFunds : Form
     {
-        string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\eshaa\\Documents\\Year 2\\Software Engineering Concepts + Methods\\MoneyMovePrototype\\MoneyMoveDB.mdf\";Integrated Security=True";
+        string connectionString = "Server=moneymoveserver.database.windows.net;Database=MoneyMoveDatabase;User Id=CloudSA51e7d7d1;Password=uglyDuckling15!;Encrypt=True;";
 
         public List<string> loadAccounts()
         {
@@ -50,6 +50,7 @@ namespace MoneyMovePrototype
             lblTransferFormatWarning.Text = "WARNING: please only use numbers (0-9) and" + Environment.NewLine + "a maximum of 2 decimal places";
             lblTransferFormatWarning.Hide();
             lblErrorsAndWarnings.Hide();
+            pbxBackToDashboard.Image = Image.FromFile(@"arrow.png");
         }
 
         private void TransferFunds_Load(object sender, EventArgs e)
@@ -306,6 +307,15 @@ namespace MoneyMovePrototype
             {
 
                 MessageBox.Show(Convert.ToString(ex));
+            }
+        }
+
+        private void pbxBackToDashboard_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you would like to proceed? Any unsaved changes will be lost.", "Confirm Action", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                FormManagement.MoveBackToPreviousForm(this, new SystemUserDashboard());
             }
         }
     }

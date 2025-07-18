@@ -37,9 +37,11 @@
             this.cmsSusCases = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.viewCaseDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvSusCases = new System.Windows.Forms.DataGridView();
+            this.pbxBackToWelcomePage = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.cmsSusCases.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSusCases)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBackToWelcomePage)).BeginInit();
             this.SuspendLayout();
             // 
             // lblWelcomeDashboard
@@ -47,7 +49,7 @@
             this.lblWelcomeDashboard.AutoSize = true;
             this.lblWelcomeDashboard.Font = new System.Drawing.Font("Candara", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcomeDashboard.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblWelcomeDashboard.Location = new System.Drawing.Point(26, 27);
+            this.lblWelcomeDashboard.Location = new System.Drawing.Point(30, 104);
             this.lblWelcomeDashboard.Name = "lblWelcomeDashboard";
             this.lblWelcomeDashboard.Size = new System.Drawing.Size(485, 59);
             this.lblWelcomeDashboard.TabIndex = 1;
@@ -58,7 +60,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Candara", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label2.Location = new System.Drawing.Point(40, 109);
+            this.label2.Location = new System.Drawing.Point(44, 186);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(562, 42);
             this.label2.TabIndex = 3;
@@ -66,28 +68,33 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.AliceBlue;
+            this.menuStrip1.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutMoneyMoveToolStripMenuItem,
             this.logoutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1484, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1484, 31);
             this.menuStrip1.TabIndex = 20;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // aboutMoneyMoveToolStripMenuItem
             // 
+            this.aboutMoneyMoveToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue;
             this.aboutMoneyMoveToolStripMenuItem.Name = "aboutMoneyMoveToolStripMenuItem";
-            this.aboutMoneyMoveToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
+            this.aboutMoneyMoveToolStripMenuItem.Size = new System.Drawing.Size(179, 27);
             this.aboutMoneyMoveToolStripMenuItem.Text = "About MoneyMove";
             this.aboutMoneyMoveToolStripMenuItem.Click += new System.EventHandler(this.aboutMoneyMoveToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
+            this.logoutToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue;
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(80, 27);
             this.logoutToolStripMenuItem.Text = "Logout";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click_1);
             // 
             // cmsSusCases
             // 
@@ -113,12 +120,23 @@
             this.dgvSusCases.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSusCases.ContextMenuStrip = this.cmsSusCases;
             this.dgvSusCases.GridColor = System.Drawing.Color.MidnightBlue;
-            this.dgvSusCases.Location = new System.Drawing.Point(40, 178);
+            this.dgvSusCases.Location = new System.Drawing.Point(51, 251);
             this.dgvSusCases.Name = "dgvSusCases";
+            this.dgvSusCases.ReadOnly = true;
             this.dgvSusCases.RowHeadersWidth = 102;
             this.dgvSusCases.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSusCases.Size = new System.Drawing.Size(531, 446);
+            this.dgvSusCases.Size = new System.Drawing.Size(861, 398);
             this.dgvSusCases.TabIndex = 22;
+            // 
+            // pbxBackToWelcomePage
+            // 
+            this.pbxBackToWelcomePage.Location = new System.Drawing.Point(14, 28);
+            this.pbxBackToWelcomePage.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.pbxBackToWelcomePage.Name = "pbxBackToWelcomePage";
+            this.pbxBackToWelcomePage.Size = new System.Drawing.Size(81, 72);
+            this.pbxBackToWelcomePage.TabIndex = 25;
+            this.pbxBackToWelcomePage.TabStop = false;
+            this.pbxBackToWelcomePage.Click += new System.EventHandler(this.pbxBackToWelcomePage_Click);
             // 
             // SystemAdminDashboard
             // 
@@ -126,6 +144,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1484, 661);
+            this.Controls.Add(this.pbxBackToWelcomePage);
             this.Controls.Add(this.dgvSusCases);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblWelcomeDashboard);
@@ -134,10 +153,12 @@
             this.Name = "SystemAdminDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "My Dashboard";
+            this.Load += new System.EventHandler(this.SystemAdminDashboard_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.cmsSusCases.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSusCases)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBackToWelcomePage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -153,5 +174,6 @@
         private System.Windows.Forms.ContextMenuStrip cmsSusCases;
         private System.Windows.Forms.ToolStripMenuItem viewCaseDetailsToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvSusCases;
+        private System.Windows.Forms.PictureBox pbxBackToWelcomePage;
     }
 }

@@ -42,10 +42,12 @@
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnDesignatedAccount = new System.Windows.Forms.Button();
+            this.pbxBackToWelcomePage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCurrentAccounts)).BeginInit();
             this.cmsForDGV.SuspendLayout();
             this.msDashboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBackToWelcomePage)).BeginInit();
             this.SuspendLayout();
             // 
             // lblWelcomeDashboard
@@ -53,7 +55,7 @@
             this.lblWelcomeDashboard.AutoSize = true;
             this.lblWelcomeDashboard.Font = new System.Drawing.Font("Candara", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcomeDashboard.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.lblWelcomeDashboard.Location = new System.Drawing.Point(21, 36);
+            this.lblWelcomeDashboard.Location = new System.Drawing.Point(23, 122);
             this.lblWelcomeDashboard.Name = "lblWelcomeDashboard";
             this.lblWelcomeDashboard.Size = new System.Drawing.Size(485, 59);
             this.lblWelcomeDashboard.TabIndex = 0;
@@ -64,7 +66,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Candara", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label2.Location = new System.Drawing.Point(33, 121);
+            this.label2.Location = new System.Drawing.Point(35, 207);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(428, 42);
             this.label2.TabIndex = 2;
@@ -130,11 +132,11 @@
             this.dgvCurrentAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCurrentAccounts.ContextMenuStrip = this.cmsForDGV;
             this.dgvCurrentAccounts.GridColor = System.Drawing.Color.MidnightBlue;
-            this.dgvCurrentAccounts.Location = new System.Drawing.Point(40, 180);
+            this.dgvCurrentAccounts.Location = new System.Drawing.Point(42, 275);
             this.dgvCurrentAccounts.Name = "dgvCurrentAccounts";
             this.dgvCurrentAccounts.RowHeadersWidth = 102;
             this.dgvCurrentAccounts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCurrentAccounts.Size = new System.Drawing.Size(531, 467);
+            this.dgvCurrentAccounts.Size = new System.Drawing.Size(534, 374);
             this.dgvCurrentAccounts.TabIndex = 18;
             // 
             // cmsForDGV
@@ -155,26 +157,30 @@
             // 
             // msDashboard
             // 
+            this.msDashboard.BackColor = System.Drawing.Color.AliceBlue;
+            this.msDashboard.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.msDashboard.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logoutToolStripMenuItem,
             this.logoutToolStripMenuItem1});
             this.msDashboard.Location = new System.Drawing.Point(0, 0);
             this.msDashboard.Name = "msDashboard";
-            this.msDashboard.Size = new System.Drawing.Size(1484, 24);
+            this.msDashboard.Size = new System.Drawing.Size(1484, 31);
             this.msDashboard.TabIndex = 19;
             this.msDashboard.Text = "menuStrip1";
             // 
             // logoutToolStripMenuItem
             // 
+            this.logoutToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue;
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(179, 27);
             this.logoutToolStripMenuItem.Text = "About MoneyMove";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem1
             // 
+            this.logoutToolStripMenuItem1.ForeColor = System.Drawing.Color.MidnightBlue;
             this.logoutToolStripMenuItem1.Name = "logoutToolStripMenuItem1";
-            this.logoutToolStripMenuItem1.Size = new System.Drawing.Size(57, 20);
+            this.logoutToolStripMenuItem1.Size = new System.Drawing.Size(80, 27);
             this.logoutToolStripMenuItem1.Text = "Logout";
             this.logoutToolStripMenuItem1.Click += new System.EventHandler(this.logoutToolStripMenuItem1_Click);
             // 
@@ -192,12 +198,23 @@
             this.btnDesignatedAccount.UseVisualStyleBackColor = false;
             this.btnDesignatedAccount.Click += new System.EventHandler(this.btnDesignatedAccount_Click);
             // 
+            // pbxBackToWelcomePage
+            // 
+            this.pbxBackToWelcomePage.Location = new System.Drawing.Point(14, 35);
+            this.pbxBackToWelcomePage.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.pbxBackToWelcomePage.Name = "pbxBackToWelcomePage";
+            this.pbxBackToWelcomePage.Size = new System.Drawing.Size(81, 72);
+            this.pbxBackToWelcomePage.TabIndex = 26;
+            this.pbxBackToWelcomePage.TabStop = false;
+            this.pbxBackToWelcomePage.Click += new System.EventHandler(this.pbxBackToWelcomePage_Click);
+            // 
             // SystemUserDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1484, 661);
+            this.Controls.Add(this.pbxBackToWelcomePage);
             this.Controls.Add(this.btnDesignatedAccount);
             this.Controls.Add(this.msDashboard);
             this.Controls.Add(this.dgvCurrentAccounts);
@@ -216,6 +233,7 @@
             this.cmsForDGV.ResumeLayout(false);
             this.msDashboard.ResumeLayout(false);
             this.msDashboard.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBackToWelcomePage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,5 +254,6 @@
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem1;
         private System.Windows.Forms.Button btnDesignatedAccount;
+        private System.Windows.Forms.PictureBox pbxBackToWelcomePage;
     }
 }
