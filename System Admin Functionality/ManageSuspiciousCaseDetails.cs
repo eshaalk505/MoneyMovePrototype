@@ -77,5 +77,64 @@ namespace MoneyMovePrototype
                 FormManagement.MoveBackToPreviousForm(this, new SystemAdminDashboard());
             }
         }
+
+        private bool HasEvidenceBeenRequested()
+        {
+            //ADD TO DATABASE
+            string queryToCheck = "SELECT [Evidence Requested] FROM dbo.[SuspiciousTransactions] WHERE ID=@caseID";
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(queryToCheck, con))
+                {
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@caseID", Convert.ToInt32(lblID.Text));
+                    object result =cmd.ExecuteScalar();
+                    bool evidenceRequested=Convert.ToBoolean(result);
+                    con.Close();
+                    if (evidenceRequested)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        private void SendEvidenceRequest()
+        {
+            string queryToSendRequest = "UPDATE dbo.[SuspiciousTransactions] SET [Status]=@st,[Reason for Suspicion]=@rs,[Evidence Provided]=@ep,[Refund Status]=@rfds,[User Account Status]=@uas,[Additional Notes]=@an WHERE [ID]=@caseID";
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(queryToSendRequest, con))
+                {
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@caseID", Convert.ToInt32(lblID.Text));
+                    cmd.Parameters.AddWithValue("@caseID", Convert.ToInt32(lblID.Text));
+                    cmd.Parameters.AddWithValue("@st", Convert.ToString(cmbCaseStatus.Text));
+                    cmd.Parameters.AddWithValue("@rs", Convert.ToString(cmbReason.Text));
+                    cmd.Parameters.AddWithValue("@rfds", Convert.ToString(cmbRefundStatus.Text));
+                    cmd.Parameters.AddWithValue("@uas", Convert.ToString(cmbAccStatus.Text));
+                    cmd.Parameters.AddWithValue("an", Convert.ToString(rtbNotes.Text));
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            MessageBox.Show("Evidence request has been sent! Please await a response from the customer");
+        }
+        private void btnSendEvidenceRequest_Click(object sender, EventArgs e)
+        {
+            bool evidenceRequested = HasEvidenceBeenRequested();
+            if (evidenceRequested)
+            {
+                MessageBox.Show("An evidence request for this case has already been sent - you cannot send another");
+            }
+            else
+            {
+                SendEvidenceRequest();
+            }
+        }
     }
 }

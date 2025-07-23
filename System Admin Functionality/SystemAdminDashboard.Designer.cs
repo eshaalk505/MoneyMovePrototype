@@ -38,10 +38,13 @@
             this.viewCaseDetailsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvSusCases = new System.Windows.Forms.DataGridView();
             this.pbxBackToWelcomePage = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnViewTransactionHistory = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.cmsSusCases.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSusCases)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBackToWelcomePage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblWelcomeDashboard
@@ -138,12 +141,36 @@
             this.pbxBackToWelcomePage.TabStop = false;
             this.pbxBackToWelcomePage.Click += new System.EventHandler(this.pbxBackToWelcomePage_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.SteelBlue;
+            this.pictureBox1.Location = new System.Drawing.Point(1033, 500);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(421, 150);
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnViewTransactionHistory
+            // 
+            this.btnViewTransactionHistory.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnViewTransactionHistory.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewTransactionHistory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnViewTransactionHistory.Location = new System.Drawing.Point(1091, 529);
+            this.btnViewTransactionHistory.Margin = new System.Windows.Forms.Padding(1);
+            this.btnViewTransactionHistory.Name = "btnViewTransactionHistory";
+            this.btnViewTransactionHistory.Size = new System.Drawing.Size(309, 89);
+            this.btnViewTransactionHistory.TabIndex = 27;
+            this.btnViewTransactionHistory.Text = "View Transaction History Trail";
+            this.btnViewTransactionHistory.UseVisualStyleBackColor = false;
+            // 
             // SystemAdminDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1484, 661);
+            this.Controls.Add(this.btnViewTransactionHistory);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pbxBackToWelcomePage);
             this.Controls.Add(this.dgvSusCases);
             this.Controls.Add(this.label2);
@@ -159,6 +186,7 @@
             this.cmsSusCases.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSusCases)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBackToWelcomePage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,5 +203,7 @@
         private System.Windows.Forms.ToolStripMenuItem viewCaseDetailsToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvSusCases;
         private System.Windows.Forms.PictureBox pbxBackToWelcomePage;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnViewTransactionHistory;
     }
 }

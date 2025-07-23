@@ -22,7 +22,8 @@ namespace MoneyMovePrototype
 
         private void createNewAccountRecord(int userID, int currencyAccountID, string accountName, float balance)
         {
-            string queryToCreateNewAccount = "INSERT INTO dbo.[CurrencyAccountsToUsersTable] ([User ID],[Currency Account ID],[Account Name],[Balance In Currency]) VALUES (@uid,@caid,@an,@bal)";
+            string queryToCreateNewAccount = "INSERT INTO dbo.[CurrencyAccountsToUsersTable] ([User ID],[Currency Account ID],[Account Name],[Balance In Currency]) " +
+                "VALUES (@uid,@caid,@an,@bal)";
             try
             {
                 using (SqlConnection con = new SqlConnection(connectionString))

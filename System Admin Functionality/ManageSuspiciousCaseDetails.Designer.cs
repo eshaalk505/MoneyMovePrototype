@@ -46,6 +46,8 @@
             this.btnUpdateRecord = new System.Windows.Forms.Button();
             this.pbxBackToDashboard = new System.Windows.Forms.PictureBox();
             this.lblID = new System.Windows.Forms.Label();
+            this.btnSendEvidenceRequest = new System.Windows.Forms.Button();
+            this.btnBlockUser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxBackToDashboard)).BeginInit();
             this.SuspendLayout();
             // 
@@ -272,12 +274,41 @@
             this.lblID.TabIndex = 37;
             this.lblID.Text = "*ID*";
             // 
+            // btnSendEvidenceRequest
+            // 
+            this.btnSendEvidenceRequest.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnSendEvidenceRequest.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSendEvidenceRequest.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSendEvidenceRequest.Location = new System.Drawing.Point(1247, 416);
+            this.btnSendEvidenceRequest.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSendEvidenceRequest.Name = "btnSendEvidenceRequest";
+            this.btnSendEvidenceRequest.Size = new System.Drawing.Size(198, 99);
+            this.btnSendEvidenceRequest.TabIndex = 38;
+            this.btnSendEvidenceRequest.Text = "Request evidence from customer";
+            this.btnSendEvidenceRequest.UseVisualStyleBackColor = false;
+            this.btnSendEvidenceRequest.Click += new System.EventHandler(this.btnSendEvidenceRequest_Click);
+            // 
+            // btnBlockUser
+            // 
+            this.btnBlockUser.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnBlockUser.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBlockUser.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnBlockUser.Location = new System.Drawing.Point(1247, 296);
+            this.btnBlockUser.Margin = new System.Windows.Forms.Padding(1);
+            this.btnBlockUser.Name = "btnBlockUser";
+            this.btnBlockUser.Size = new System.Drawing.Size(198, 89);
+            this.btnBlockUser.TabIndex = 39;
+            this.btnBlockUser.Text = "Block customer account";
+            this.btnBlockUser.UseVisualStyleBackColor = false;
+            // 
             // ManageSuspiciousCaseDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1484, 661);
+            this.Controls.Add(this.btnBlockUser);
+            this.Controls.Add(this.btnSendEvidenceRequest);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.pbxBackToDashboard);
             this.Controls.Add(this.btnUpdateRecord);
@@ -325,5 +356,7 @@
         private System.Windows.Forms.Button btnUpdateRecord;
         private System.Windows.Forms.PictureBox pbxBackToDashboard;
         private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Button btnSendEvidenceRequest;
+        private System.Windows.Forms.Button btnBlockUser;
     }
 }

@@ -74,6 +74,12 @@
       <DependentUpon>ManageSuspiciousCaseDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Objects\SuspiciousCase.cs" />
+    <Compile Include="System Admin Functionality\ViewTransactionHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System Admin Functionality\ViewTransactionHistory.Designer.cs">
+      <DependentUpon>ViewTransactionHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="System User Functionality\CreateNewCurrencyAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="System Admin Functionality\ManageSuspiciousCaseDetails.resx">
       <DependentUpon>ManageSuspiciousCaseDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System Admin Functionality\ViewTransactionHistory.resx">
+      <DependentUpon>ViewTransactionHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="System User Functionality\CreateNewCurrencyAccount.resx">
       <DependentUpon>CreateNewCurrencyAccount.cs</DependentUpon>

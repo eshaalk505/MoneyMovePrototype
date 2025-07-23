@@ -312,7 +312,8 @@ namespace MoneyMovePrototype
 
         private void pbxBackToDashboard_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Are you sure you would like to proceed? Any unsaved changes will be lost.", "Confirm Action", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            DialogResult result = MessageBox.Show("Are you sure you would like to proceed? Any unsaved changes will be lost.", 
+                "Confirm Action", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
                 FormManagement.MoveBackToPreviousForm(this, new SystemUserDashboard());
