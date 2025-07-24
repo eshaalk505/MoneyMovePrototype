@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using MoneyMovePrototype.System_User_Functionality;
 
 namespace MoneyMovePrototype
 {
@@ -29,7 +30,6 @@ namespace MoneyMovePrototype
         {
             string username = txtUsername.Text.Trim();
             string password=txtPassword.Text.Trim();
-            //string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\eshaa\\Documents\\Year 2\\Software Engineering Concepts + Methods\\MoneyMovePrototype\\MoneyMoveDB.mdf\";Integrated Security=True";
             string connectionString = "Server=moneymoveserver.database.windows.net;Database=MoneyMoveDatabase;User Id=CloudSA51e7d7d1;Password=uglyDuckling15!;Encrypt=True;";
             string usernameCountQuery = "SELECT COUNT(*) FROM dbo.[UserDetailsTable] WHERE Username=@username";
             string verificationQuery = "SELECT * FROM dbo.[UserDetailsTable] WHERE Username= '" + username + "' AND Password='" + password + "'";
@@ -84,7 +84,7 @@ namespace MoneyMovePrototype
                                             string forename = informationManagementMethods.getForenameFromID(ID);
                                             string surname = informationManagementMethods.getSurnameFromID(ID);
                                             SessionManager.Instance.CreateSession(ID, username, forename, surname);
-                                            FormManagement.NavigateToNextForm(this, new SystemUserDashboard());
+                                            FormManagement.NavigateToNextForm(this, new VerifyOTP());
                                         }
                                     }
                                     else
