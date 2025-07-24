@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MoneyMovePrototype.System_Admin_Functionality;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -75,6 +76,11 @@ namespace MoneyMovePrototype
             {
                 FormManagement.MoveBackToPreviousForm(this, new SystemAdminLoginPage());
             }
+        }
+
+        private void btnViewTransactionHistory_Click(object sender, EventArgs e)
+        {
+            FormManagement.NavigateToNextForm(this, new ViewTransactionHistory());
         }
     }
 }

@@ -74,6 +74,7 @@
       <DependentUpon>ManageSuspiciousCaseDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Objects\SuspiciousCase.cs" />
+    <Compile Include="System Admin Functionality\OTPMethods.cs" />
     <Compile Include="System Admin Functionality\ViewTransactionHistory.cs">
       <SubType>Form</SubType>
     </Compile>

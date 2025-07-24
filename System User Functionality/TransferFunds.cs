@@ -293,6 +293,33 @@ namespace MoneyMovePrototype
             }
             
         }
+
+        private void AddRecordToHistory()
+        {
+            string queryToAddToHistory = "INSERT INTO dbo.[TransactionHistoryTable] ([Customer],[Target Account Name],[Source Account Name],[Amount Transferred in Target Account Currency],[Transaction Date]) VALUES (@cust,@tam,@sam,@money,@date)";
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    string custName = SessionManager.Instance._forenameOfUser + SessionManager.Instance._surnameOfUser;
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand(queryToAddToHistory, con);
+                    cmd.Parameters.AddWithValue("@cust", custName);
+                    cmd.Parameters.AddWithValue("@tam", cmbTargetAccounts.SelectedItem.ToString());
+                    cmd.Parameters.AddWithValue("@sam", cmbSourceAccounts.SelectedItem.ToString());
+                    cmd.Parameters.AddWithValue("@money", Convert.ToDecimal(txtAmountInTarget.Text));
+                    cmd.Parameters.AddWithValue("@date", DateTime.UtcNow);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Convert.ToString(ex));
+            }
+        }
+        
+
         private void btnTransferFunds_Click(object sender, EventArgs e)
         {
             try
@@ -300,6 +327,7 @@ namespace MoneyMovePrototype
                 decimal amountToAdd = ConvertCurrency();
                 decimal amountToSubtract = Convert.ToDecimal(txtAmountToTransfer.Text);
                 ExecuteTransfer(cmbSourceAccounts.Text, cmbTargetAccounts.Text, amountToSubtract, amountToAdd);
+                AddRecordToHistory();
                 MessageBox.Show("Transfer complete!");
 
             }

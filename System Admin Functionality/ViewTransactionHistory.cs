@@ -17,9 +17,8 @@ namespace MoneyMovePrototype.System_Admin_Functionality
 
         public List<string> loadUsers()
         {
-            //NEEDS FINISHING
             List<string> users = new List<string>();
-            string queryToRetrieveAccounts = "SELECT [Forename] AND [Surname] FROM dbo.[UserDetailsTable]";
+            string queryToRetrieveAccounts = "SELECT [Forename], [Surname] FROM dbo.[UserDetailsTable]";
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
@@ -29,7 +28,9 @@ namespace MoneyMovePrototype.System_Admin_Functionality
                 {
                     while (reader.Read())
                     {
-                        users.Add(reader.GetString(0));
+                        string forename = reader.GetString(0);
+                        string surname = reader.GetString(1);
+                        users.Add(forename + " " + surname);
                     }
                 }
                 con.Close();
@@ -37,10 +38,26 @@ namespace MoneyMovePrototype.System_Admin_Functionality
             }
         }
 
-        public ViewTransactionHistory()
+        private void LoadDGVData()
         {
-            InitializeComponent();
+            dgvTransactionHistory.DefaultCellStyle.Font = new Font("Candara", 10);
+            dgvTransactionHistory.DefaultCellStyle.ForeColor = Color.MidnightBlue;
+            dgvTransactionHistory.ColumnHeadersDefaultCellStyle.Font = new Font("Candara", 11, FontStyle.Bold);
+            dgvTransactionHistory.ColumnHeadersDefaultCellStyle.ForeColor = Color.MidnightBlue;
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string query = "SELECT [Customer],[Target Account Name],[Source Account Name], [Amount Transferred in Target Account Currency], [Transaction Date] FROM dbo.[TransactionHistoryTable]";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+
+                    dgvTransactionHistory.DataSource = table;
+                }
+            }
         }
+
 
         private void ViewTransactionHistory_Load(object sender, EventArgs e)
         {
@@ -63,9 +80,16 @@ namespace MoneyMovePrototype.System_Admin_Functionality
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(Convert.ToString(ex));
             }
         }
+
+        public ViewTransactionHistory()
+        {
+            InitializeComponent();
+            LoadDGVData();
+        }
+
+        
     }
 }

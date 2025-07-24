@@ -162,6 +162,7 @@
             this.btnViewTransactionHistory.TabIndex = 27;
             this.btnViewTransactionHistory.Text = "View Transaction History Trail";
             this.btnViewTransactionHistory.UseVisualStyleBackColor = false;
+            this.btnViewTransactionHistory.Click += new System.EventHandler(this.btnViewTransactionHistory_Click);
             // 
             // SystemAdminDashboard
             // 
