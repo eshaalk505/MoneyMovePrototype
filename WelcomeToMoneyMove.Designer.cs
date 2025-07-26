@@ -40,6 +40,7 @@
             this.lblAdminAccess = new System.Windows.Forms.Label();
             this.msAbout = new System.Windows.Forms.MenuStrip();
             this.aboutMoneyMoveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMainPagePic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSystemUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSystemAdmin)).BeginInit();
@@ -168,7 +169,8 @@
             // 
             this.msAbout.BackColor = System.Drawing.Color.AliceBlue;
             this.msAbout.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutMoneyMoveToolStripMenuItem});
+            this.aboutMoneyMoveToolStripMenuItem,
+            this.logoutToolStripMenuItem});
             this.msAbout.Location = new System.Drawing.Point(0, 0);
             this.msAbout.Name = "msAbout";
             this.msAbout.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
@@ -183,6 +185,14 @@
             this.aboutMoneyMoveToolStripMenuItem.Size = new System.Drawing.Size(179, 27);
             this.aboutMoneyMoveToolStripMenuItem.Text = "About MoneyMove";
             this.aboutMoneyMoveToolStripMenuItem.Click += new System.EventHandler(this.aboutMoneyMoveToolStripMenuItem_Click);
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(54, 27);
+            this.logoutToolStripMenuItem.Text = "Exit";
+            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // WelcomeToMoneyMove
             // 
@@ -233,5 +243,6 @@
         private System.Windows.Forms.Label lblAdminAccess;
         private System.Windows.Forms.MenuStrip msAbout;
         private System.Windows.Forms.ToolStripMenuItem aboutMoneyMoveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
     }
 }

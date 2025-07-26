@@ -50,5 +50,14 @@ namespace MoneyMovePrototype
         {
             FormManagement.NavigateToNextForm(this,new AboutMoneyMove(this));
         }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you would like to exit MoneyMove?", "Confirm Action", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
+            {
+                SessionManager.Instance.FinishSession();
+            }
+        }
     }
 }

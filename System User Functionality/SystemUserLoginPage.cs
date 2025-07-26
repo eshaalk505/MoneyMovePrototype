@@ -79,7 +79,7 @@ namespace MoneyMovePrototype
                                         }
                                         else
                                         {
-                                            MessageBox.Show("Login successful!");
+                                            //Login details were correct
                                             int ID = informationManagementMethods.getIDFromUserName(username);
                                             string forename = informationManagementMethods.getForenameFromID(ID);
                                             string surname = informationManagementMethods.getSurnameFromID(ID);

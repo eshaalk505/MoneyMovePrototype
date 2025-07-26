@@ -15,29 +15,6 @@ namespace MoneyMovePrototype.System_Admin_Functionality
     {
         string connectionString = "Server=moneymoveserver.database.windows.net;Database=MoneyMoveDatabase;User Id=CloudSA51e7d7d1;Password=uglyDuckling15!;Encrypt=True;";
 
-        public List<string> loadUsers()
-        {
-            List<string> users = new List<string>();
-            string queryToRetrieveAccounts = "SELECT [Forename], [Surname] FROM dbo.[UserDetailsTable]";
-
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand(queryToRetrieveAccounts, con);
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        string forename = reader.GetString(0);
-                        string surname = reader.GetString(1);
-                        users.Add(forename + " " + surname);
-                    }
-                }
-                con.Close();
-                return users;
-            }
-        }
-
         private void LoadDGVData()
         {
             dgvTransactionHistory.DefaultCellStyle.Font = new Font("Candara", 10);
@@ -58,38 +35,16 @@ namespace MoneyMovePrototype.System_Admin_Functionality
             }
         }
 
-
-        private void ViewTransactionHistory_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                List<string> users = loadUsers();
-                users.Add("All");
-                if (users.Count != 0)
-                {
-                    cmbFilters.Items.Clear();
-                    cmbFilters.Items.AddRange(users.ToArray());
-                    cmbFilters.Items.Clear();
-                    cmbFilters.Items.AddRange(users.ToArray());
-                }
-                else
-                {
-                    MessageBox.Show("No transaction history for this user");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(Convert.ToString(ex));
-            }
-        }
-
         public ViewTransactionHistory()
         {
             InitializeComponent();
+            pbxBackToWelcomePage.Image = Image.FromFile(@"arrow.png");
             LoadDGVData();
         }
 
-        
+        private void pbxBackToWelcomePage_Click(object sender, EventArgs e)
+        {
+            FormManagement.MoveBackToPreviousForm(this, new SystemAdminDashboard());
+        }
     }
 }
