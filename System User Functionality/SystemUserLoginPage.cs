@@ -102,7 +102,7 @@ namespace MoneyMovePrototype
                                             bool isAccountBlocked = CheckIfAccountHasBeenBlocked(username);
                                             if (isAccountBlocked)
                                             {
-                                                MessageBox.Show("Your account has been blocked by system administration due to failure to provide evidence in a suspicious transaction request. Please contact the details under 'About' for further support.");
+                                                MessageBox.Show("Your account has been blocked by system administration due to failure to provide evidence in a suspicious transaction request. Please contact your local MoneyMove office for more information.");
                                                 this.Close(); // Close the login form
                                             }
                                             else

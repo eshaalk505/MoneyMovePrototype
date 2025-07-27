@@ -69,7 +69,7 @@ namespace MoneyMovePrototype
             catch (Exception)
             {
 
-                MessageBox("Error creating account. Please check the entered details and connection and try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error creating account. Please check the entered details and connection and try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
