@@ -47,21 +47,30 @@ namespace MoneyMovePrototype
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            int userID = SessionManager.Instance._idOfUser;
-            string selectedCurrency = cmbAccountCurrency.SelectedItem.ToString();
-            int currencyAccountID;
-            float balance = 0;
-            string queryToGetCurrencyID = "SELECT ID FROM dbo.[CurrencyAccountsTable] WHERE Currency=@currency";         
-            using (SqlConnection con = new SqlConnection(connectionString))
+            try
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand(queryToGetCurrencyID, con);
-                cmd.Parameters.AddWithValue("@currency", selectedCurrency);
-                object result = cmd.ExecuteScalar();
-                currencyAccountID = Convert.ToInt32(result);
-                con.Close();
+                int userID = SessionManager.Instance._idOfUser;
+                string selectedCurrency = cmbAccountCurrency.SelectedItem.ToString();
+                int currencyAccountID;
+                float balance = 0;
+                string queryToGetCurrencyID = "SELECT ID FROM dbo.[CurrencyAccountsTable] WHERE Currency=@currency";
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand(queryToGetCurrencyID, con);
+                    cmd.Parameters.AddWithValue("@currency", selectedCurrency);
+                    object result = cmd.ExecuteScalar();
+                    currencyAccountID = Convert.ToInt32(result);
+                    con.Close();
+                }
+                createNewAccountRecord(userID, currencyAccountID, txtAccountName.Text, balance);
+
             }
-            createNewAccountRecord(userID, currencyAccountID,txtAccountName.Text,balance);
+            catch (Exception)
+            {
+
+                MessageBox("Error creating account. Please check the entered details and connection and try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void pbxBackToDashboard_Click(object sender, EventArgs e)

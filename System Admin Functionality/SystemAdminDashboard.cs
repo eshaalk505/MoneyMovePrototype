@@ -54,8 +54,16 @@ namespace MoneyMovePrototype
 
         private void viewCaseDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SuspiciousCase selectedCase = new SuspiciousCase(Convert.ToInt32(dgvSusCases.SelectedCells[0].Value), Convert.ToString(dgvSusCases.SelectedCells[1].Value), Convert.ToString(dgvSusCases.SelectedCells[2].Value), Convert.ToString(dgvSusCases.SelectedCells[3].Value), Convert.ToString(dgvSusCases.SelectedCells[4].Value),Convert.ToBoolean(dgvSusCases.SelectedCells[5].Value), Convert.ToString(dgvSusCases.SelectedCells[6].Value), Convert.ToString(dgvSusCases.SelectedCells[7].Value), Convert.ToString(dgvSusCases.SelectedCells[8].Value));
-            FormManagement.NavigateToNextForm(this,new ManageSuspiciousCaseDetails(selectedCase));
+            try
+            {
+                SuspiciousCase selectedCase = new SuspiciousCase(Convert.ToInt32(dgvSusCases.SelectedCells[0].Value), Convert.ToString(dgvSusCases.SelectedCells[1].Value), Convert.ToString(dgvSusCases.SelectedCells[2].Value), Convert.ToString(dgvSusCases.SelectedCells[3].Value), Convert.ToString(dgvSusCases.SelectedCells[4].Value), Convert.ToBoolean(dgvSusCases.SelectedCells[5].Value), Convert.ToString(dgvSusCases.SelectedCells[6].Value), Convert.ToString(dgvSusCases.SelectedCells[7].Value), Convert.ToString(dgvSusCases.SelectedCells[8].Value));
+                FormManagement.NavigateToNextForm(this, new ManageSuspiciousCaseDetails(selectedCase));
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error in retrieving information. Please check your connection and try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void logoutToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -80,7 +88,17 @@ namespace MoneyMovePrototype
 
         private void btnViewTransactionHistory_Click(object sender, EventArgs e)
         {
-            FormManagement.NavigateToNextForm(this, new ViewTransactionHistory());
+            try
+            {
+                FormManagement.NavigateToNextForm(this, new ViewTransactionHistory());
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error in retrieving information. Please check your connection and try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
     }
 }

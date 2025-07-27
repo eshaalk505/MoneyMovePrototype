@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace MoneyMovePrototype
 {
@@ -23,6 +24,7 @@ namespace MoneyMovePrototype
             txtAccountProvider.Text=Convert.ToString(selectedCase.customerForename)+" "+Convert.ToString(selectedCase.customerSurname);
             cmbCaseStatus.Text=Convert.ToString(selectedCase.caseStatus);
             cmbReason.Text=Convert.ToString(selectedCase.reason);
+            txtCustID.Text = Convert.ToString(selectedCase.caseID);
             if (selectedCase.evidenceProvided==false)
             {
                 cmbEvidence.Text = "No";
@@ -134,6 +136,83 @@ namespace MoneyMovePrototype
             else
             {
                 SendEvidenceRequest();
+            }
+        }
+
+        private bool CheckIfUserIsAlreadyBlocked()
+        {
+            string verificationQuery = "SELECT [IsAccountBlocked] FROM dbo.[UserDetailsTable] WHERE [ID]=@id";
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(verificationQuery, con);
+                cmd.Parameters.AddWithValue("@id",Convert.ToInt32(txtCustID.Text));
+                object result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    bool isAccountBlocked = Convert.ToBoolean(result);
+                    return isAccountBlocked;
+                }
+                return false;
+            }
+        }
+        private void btnBlockUser_Click(object sender, EventArgs e)
+        {
+            bool isUserAlreadyBlocked = CheckIfUserIsAlreadyBlocked();
+            if (isUserAlreadyBlocked)
+            {
+                MessageBox.Show("User is already blocked, they cannot be blocked again");
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you sure you would like to block this user? They will not be able to access their account", "Confirm Action", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    string queryToBlockUser = "UPDATE dbo.[UserDetailsTable] SET [IsAccountBlocked]=@isBlocked WHERE [ID]=@id";
+                    using (SqlConnection con = new SqlConnection(connectionString))
+                    {
+                        using (SqlCommand cmd = new SqlCommand(queryToBlockUser, con))
+                        {
+                            con.Open();
+                            cmd.Parameters.AddWithValue("@id", Convert.ToInt32(txtCustID.Text));
+                            cmd.Parameters.AddWithValue("@isBlocked", true);
+                            cmd.ExecuteNonQuery();
+                            con.Close();
+                        }
+                    }
+                    MessageBox.Show("User has been blocked successfully");
+                    FormManagement.MoveBackToPreviousForm(this, new SystemAdminDashboard());
+                }
+            }
+        }
+
+        private void btnUnblockUser_Click(object sender, EventArgs e)
+        {
+            bool isUserAlreadyBlocked = CheckIfUserIsAlreadyBlocked();
+            if (!isUserAlreadyBlocked)
+            {
+                MessageBox.Show("User is already unblocked");
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Are you sure you would like to unblock this user?", "Confirm Action", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    string queryToUnblockUser = "UPDATE dbo.[UserDetailsTable] SET [IsAccountBlocked]=@isBlocked WHERE [ID]=@id";
+                    using (SqlConnection con = new SqlConnection(connectionString))
+                    {
+                        using (SqlCommand cmd = new SqlCommand(queryToUnblockUser, con))
+                        {
+                            con.Open();
+                            cmd.Parameters.AddWithValue("@id", Convert.ToInt32(txtCustID.Text));
+                            cmd.Parameters.AddWithValue("@isBlocked", false);
+                            cmd.ExecuteNonQuery();
+                            con.Close();
+                        }
+                    }
+                    MessageBox.Show("User has been unblocked successfully");
+                    FormManagement.MoveBackToPreviousForm(this, new SystemAdminDashboard());
+                }
             }
         }
     }

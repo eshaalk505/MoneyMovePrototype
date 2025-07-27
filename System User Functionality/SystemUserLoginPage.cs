@@ -26,6 +26,25 @@ namespace MoneyMovePrototype
             pbxBackToWelcomePage.Image = Image.FromFile(@"arrow.png");
         }
 
+        private bool CheckIfAccountHasBeenBlocked(string username)
+        {
+            string connectionString = "Server=moneymoveserver.database.windows.net;Database=MoneyMoveDatabase;User Id=CloudSA51e7d7d1;Password=uglyDuckling15!;Encrypt=True;";
+            string verificationQuery = "SELECT [IsAccountBlocked] FROM dbo.[UserDetailsTable] WHERE Username=@un";
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(verificationQuery, con);
+                cmd.Parameters.AddWithValue("@un", username);
+                object result = cmd.ExecuteScalar();
+                if (result != null)
+                {
+                    bool isAccountBlocked =Convert.ToBoolean(result);
+                    return isAccountBlocked;
+                }
+                return false;
+            }
+
+        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
@@ -80,11 +99,20 @@ namespace MoneyMovePrototype
                                         else
                                         {
                                             //Login details were correct
-                                            int ID = informationManagementMethods.getIDFromUserName(username);
-                                            string forename = informationManagementMethods.getForenameFromID(ID);
-                                            string surname = informationManagementMethods.getSurnameFromID(ID);
-                                            SessionManager.Instance.CreateSession(ID, username, forename, surname);
-                                            FormManagement.NavigateToNextForm(this, new VerifyOTP());
+                                            bool isAccountBlocked = CheckIfAccountHasBeenBlocked(username);
+                                            if (isAccountBlocked)
+                                            {
+                                                MessageBox.Show("Your account has been blocked by system administration due to failure to provide evidence in a suspicious transaction request. Please contact the details under 'About' for further support.");
+                                                this.Close(); // Close the login form
+                                            }
+                                            else
+                                            {
+                                                int ID = informationManagementMethods.getIDFromUserName(username);
+                                                string forename = informationManagementMethods.getForenameFromID(ID);
+                                                string surname = informationManagementMethods.getSurnameFromID(ID);
+                                                SessionManager.Instance.CreateSession(ID, username, forename, surname);
+                                                FormManagement.NavigateToNextForm(this, new VerifyOTP());
+                                            }
                                         }
                                     }
                                     else

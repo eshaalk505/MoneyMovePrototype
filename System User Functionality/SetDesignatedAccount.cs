@@ -119,8 +119,7 @@ namespace MoneyMovePrototype
             }
             catch (Exception ex)
             {
-
-                MessageBox.Show(Convert.ToString(ex));
+                MessageBox.Show("Error completing action, please try again later.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }

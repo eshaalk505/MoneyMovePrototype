@@ -294,7 +294,16 @@ namespace MoneyMovePrototype
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            ConfigureChart();
+            try
+            {
+                ConfigureChart();
+
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Error in fetching information, please check your connection and try again","Error",MessageBoxButtons.OK);
+            }
         }
     }
 }
